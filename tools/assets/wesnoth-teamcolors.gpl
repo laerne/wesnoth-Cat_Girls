@@ -1,0 +1,194 @@
+GIMP Palette
+Name: Wesnoth Team Colors
+Columns: 10
+
+36 0 0 Red 1
+19 22 34 Blue 1
+13 25 14 Green 1
+20 0 22 Purple 1
+49 30 12 Orange 1
+12 12 12 Black 1
+57 57 57 White 1
+21 11 5 Brown 1
+6 28 27 Cyan 1
+63 0 22 Base Pink 1
+54 0 0 Red 2
+21 25 44 Blue 2
+20 38 21 Green 2
+31 0 33 Purple 2
+66 38 11 Orange 2
+19 19 19 Black 2
+71 71 71 White 2
+31 17 8 Brown 2
+10 43 40 Cyan 2
+85 0 42 Base Pink 2
+69 0 0 Red 3
+23 28 53 Blue 3
+26 49 27 Green 3
+40 0 43 Purple 3
+80 45 10 Orange 3
+24 24 24 Black 3
+83 83 83 White 3
+40 21 10 Brown 3
+13 55 52 Cyan 3
+105 0 57 Base Pink 3
+82 0 0 Red 4
+25 31 60 Blue 4
+31 59 32 Green 4
+47 0 51 Purple 4
+92 51 10 Orange 4
+29 29 29 Black 4
+93 93 93 White 4
+48 25 12 Brown 4
+15 65 62 Cyan 4
+123 0 69 Base Pink 4
+94 0 0 Red 5
+26 33 66 Blue 5
+36 67 37 Green 5
+54 0 58 Purple 5
+103 56 9 Orange 5
+33 33 33 Black 5
+102 102 102 White 5
+54 29 14 Brown 5
+17 75 71 Cyan 5
+140 0 81 Base Pink 5
+107 0 0 Red 6
+28 36 73 Blue 6
+41 76 42 Green 6
+61 0 66 Purple 6
+116 61 8 Orange 6
+37 37 37 Black 6
+112 112 112 White 6
+62 33 16 Brown 6
+20 85 80 Cyan 6
+158 0 93 Base Pink 6
+121 0 0 Red 7
+29 38 81 Blue 7
+46 86 47 Green 7
+70 0 74 Purple 7
+129 67 7 Orange 7
+42 42 42 Black 7
+123 123 123 White 7
+70 38 18 Brown 7
+22 96 91 Cyan 7
+177 0 105 Base Pink 7
+133 0 0 Red 8
+31 41 88 Blue 8
+51 95 52 Green 8
+76 0 82 Purple 8
+140 73 7 Orange 8
+47 47 47 Black 8
+131 131 131 White 8
+77 41 20 Brown 8
+25 106 100 Cyan 8
+195 0 116 Base Pink 8
+146 0 0 Red 9
+32 43 95 Blue 9
+56 104 57 Green 9
+84 0 90 Purple 9
+152 78 6 Orange 9
+51 51 51 Black 9
+141 141 141 White 9
+84 45 22 Brown 9
+27 116 110 Cyan 9
+214 0 127 Base Pink 9
+161 0 0 Red 10
+34 46 103 Blue 10
+62 115 63 Green 10
+93 0 99 Purple 10
+167 85 5 Orange 10
+57 57 57 Black 10
+153 153 153 White 10
+93 50 24 Brown 10
+30 128 121 Cyan 10
+236 0 140 Base Pink 10
+192 0 0 Red 11
+38 52 120 Blue 11
+74 137 75 Green 11
+111 0 118 Purple 11
+196 98 3 Orange 11
+68 68 68 Black 11
+177 177 177 White 11
+111 60 29 Brown 11
+36 153 145 Cyan 11
+238 61 150 Base Pink 11
+210 0 0 Red 12
+40 56 130 Blue 12
+81 150 82 Green 12
+121 0 129 Purple 12
+213 106 2 Orange 12
+74 74 74 Black 12
+191 191 191 White 12
+122 66 32 Brown 12
+39 167 158 Cyan 12
+239 91 161 Base Pink 12
+226 0 0 Red 13
+42 59 139 Blue 13
+87 161 88 Green 13
+130 0 139 Purple 13
+228 113 1 Orange 13
+79 79 79 Black 13
+203 203 203 White 13
+131 71 34 Brown 13
+42 180 170 Cyan 13
+241 114 172 Base Pink 13
+240 0 0 Red 14
+44 62 147 Blue 14
+92 171 94 Green 14
+138 0 148 Purple 14
+241 119 0 Orange 14
+84 84 84 Black 14
+214 214 214 White 14
+139 75 36 Brown 14
+45 191 181 Cyan 14
+242 135 182 Base Pink 14
+255 0 0 Red 15
+46 65 155 Blue 15
+98 182 100 Green 15
+147 0 157 Purple 15
+255 126 0 Orange 15
+90 90 90 Black 15
+225 225 225 White 15
+148 80 39 Brown 15
+48 203 192 Cyan 15
+244 154 193 Base Pink 15
+255 48 48 Red 16
+85 101 173 Blue 16
+127 195 129 Green 16
+167 48 175 Purple 16
+255 150 48 Orange 16
+121 121 121 Black 16
+230 230 230 White 16
+168 113 79 Brown 16
+87 212 203 Cyan 16
+246 173 205 Base Pink 16
+255 96 96 Red 17
+125 137 192 Blue 17
+157 209 158 Green 17
+187 96 194 Purple 17
+255 174 96 Orange 17
+152 152 152 Black 17
+236 236 236 White 17
+188 146 120 Brown 17
+126 222 215 Cyan 17
+248 193 217 Base Pink 17
+255 145 145 Red 18
+164 173 211 Blue 18
+187 223 188 Green 18
+208 145 212 Purple 18
+255 199 145 Orange 18
+183 183 183 Black 18
+242 242 242 White 18
+208 179 161 Brown 18
+165 232 227 Cyan 18
+250 213 229 Base Pink 18
+255 197 197 Red 19
+208 212 232 Blue 19
+219 238 220 Green 19
+230 197 233 Purple 19
+255 226 197 Orange 19
+218 218 218 Black 19
+248 248 248 White 19
+231 215 206 Brown 19
+208 243 240 Cyan 19
+253 233 241 Base Pink 19
