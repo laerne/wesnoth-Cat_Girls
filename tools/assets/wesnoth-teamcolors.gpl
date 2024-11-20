@@ -1,194 +1,308 @@
 GIMP Palette
 Name: Wesnoth Team Colors
-Columns: 10
+Columns: 19
 
-36 0 0 Red 1
-19 22 34 Blue 1
-13 25 14 Green 1
-20 0 22 Purple 1
-49 30 12 Orange 1
-12 12 12 Black 1
-57 57 57 White 1
-21 11 5 Brown 1
-6 28 27 Cyan 1
-63 0 22 Base Pink 1
-54 0 0 Red 2
-21 25 44 Blue 2
-20 38 21 Green 2
-31 0 33 Purple 2
-66 38 11 Orange 2
-19 19 19 Black 2
-71 71 71 White 2
-31 17 8 Brown 2
-10 43 40 Cyan 2
-85 0 42 Base Pink 2
-69 0 0 Red 3
-23 28 53 Blue 3
-26 49 27 Green 3
-40 0 43 Purple 3
-80 45 10 Orange 3
-24 24 24 Black 3
-83 83 83 White 3
-40 21 10 Brown 3
-13 55 52 Cyan 3
-105 0 57 Base Pink 3
-82 0 0 Red 4
-25 31 60 Blue 4
-31 59 32 Green 4
-47 0 51 Purple 4
-92 51 10 Orange 4
-29 29 29 Black 4
-93 93 93 White 4
-48 25 12 Brown 4
-15 65 62 Cyan 4
-123 0 69 Base Pink 4
-94 0 0 Red 5
-26 33 66 Blue 5
-36 67 37 Green 5
-54 0 58 Purple 5
-103 56 9 Orange 5
-33 33 33 Black 5
-102 102 102 White 5
-54 29 14 Brown 5
-17 75 71 Cyan 5
-140 0 81 Base Pink 5
-107 0 0 Red 6
-28 36 73 Blue 6
-41 76 42 Green 6
-61 0 66 Purple 6
-116 61 8 Orange 6
-37 37 37 Black 6
-112 112 112 White 6
-62 33 16 Brown 6
-20 85 80 Cyan 6
-158 0 93 Base Pink 6
-121 0 0 Red 7
-29 38 81 Blue 7
-46 86 47 Green 7
-70 0 74 Purple 7
-129 67 7 Orange 7
-42 42 42 Black 7
-123 123 123 White 7
-70 38 18 Brown 7
-22 96 91 Cyan 7
-177 0 105 Base Pink 7
-133 0 0 Red 8
-31 41 88 Blue 8
-51 95 52 Green 8
-76 0 82 Purple 8
-140 73 7 Orange 8
-47 47 47 Black 8
-131 131 131 White 8
-77 41 20 Brown 8
-25 106 100 Cyan 8
-195 0 116 Base Pink 8
-146 0 0 Red 9
-32 43 95 Blue 9
-56 104 57 Green 9
-84 0 90 Purple 9
-152 78 6 Orange 9
-51 51 51 Black 9
-141 141 141 White 9
-84 45 22 Brown 9
-27 116 110 Cyan 9
-214 0 127 Base Pink 9
-161 0 0 Red 10
-34 46 103 Blue 10
-62 115 63 Green 10
-93 0 99 Purple 10
-167 85 5 Orange 10
-57 57 57 Black 10
-153 153 153 White 10
-93 50 24 Brown 10
-30 128 121 Cyan 10
+253 233 241 Base Pink 1
+250 213 229 Base Pink 2
+248 193 217 Base Pink 3
+246 173 205 Base Pink 4
+244 154 193 Base Pink 5
+242 135 182 Base Pink 6
+241 114 172 Base Pink 7
+239 91 161 Base Pink 8
+238 61 150 Base Pink 9
 236 0 140 Base Pink 10
-192 0 0 Red 11
-38 52 120 Blue 11
-74 137 75 Green 11
-111 0 118 Purple 11
-196 98 3 Orange 11
-68 68 68 Black 11
-177 177 177 White 11
-111 60 29 Brown 11
-36 153 145 Cyan 11
-238 61 150 Base Pink 11
-210 0 0 Red 12
-40 56 130 Blue 12
-81 150 82 Green 12
-121 0 129 Purple 12
-213 106 2 Orange 12
-74 74 74 Black 12
-191 191 191 White 12
-122 66 32 Brown 12
-39 167 158 Cyan 12
-239 91 161 Base Pink 12
-226 0 0 Red 13
-42 59 139 Blue 13
-87 161 88 Green 13
-130 0 139 Purple 13
-228 113 1 Orange 13
-79 79 79 Black 13
-203 203 203 White 13
-131 71 34 Brown 13
-42 180 170 Cyan 13
-241 114 172 Base Pink 13
-240 0 0 Red 14
-44 62 147 Blue 14
-92 171 94 Green 14
-138 0 148 Purple 14
-241 119 0 Orange 14
-84 84 84 Black 14
-214 214 214 White 14
-139 75 36 Brown 14
-45 191 181 Cyan 14
-242 135 182 Base Pink 14
-255 0 0 Red 15
-46 65 155 Blue 15
-98 182 100 Green 15
-147 0 157 Purple 15
-255 126 0 Orange 15
-90 90 90 Black 15
-225 225 225 White 15
-148 80 39 Brown 15
-48 203 192 Cyan 15
-244 154 193 Base Pink 15
-255 48 48 Red 16
-85 101 173 Blue 16
-127 195 129 Green 16
-167 48 175 Purple 16
-255 150 48 Orange 16
-121 121 121 Black 16
-230 230 230 White 16
-168 113 79 Brown 16
-87 212 203 Cyan 16
-246 173 205 Base Pink 16
-255 96 96 Red 17
-125 137 192 Blue 17
-157 209 158 Green 17
-187 96 194 Purple 17
-255 174 96 Orange 17
-152 152 152 Black 17
-236 236 236 White 17
-188 146 120 Brown 17
-126 222 215 Cyan 17
-248 193 217 Base Pink 17
-255 145 145 Red 18
-164 173 211 Blue 18
-187 223 188 Green 18
-208 145 212 Purple 18
-255 199 145 Orange 18
-183 183 183 Black 18
-242 242 242 White 18
-208 179 161 Brown 18
-165 232 227 Cyan 18
-250 213 229 Base Pink 18
-255 197 197 Red 19
-208 212 232 Blue 19
-219 238 220 Green 19
-230 197 233 Purple 19
-255 226 197 Orange 19
-218 218 218 Black 19
-248 248 248 White 19
-231 215 206 Brown 19
-208 243 240 Cyan 19
-253 233 241 Base Pink 19
+214 0 127 Base Pink 11
+195 0 116 Base Pink 12
+177 0 105 Base Pink 13
+158 0 93 Base Pink 14
+140 0 81 Base Pink 15
+123 0 69 Base Pink 16
+105 0 57 Base Pink 17
+85 0 42 Base Pink 18
+63 0 22 Base Pink 19
+255 197 197 Red 1
+255 145 145 Red 2
+255 96 96 Red 3
+255 48 48 Red 4
+255 0 0 Red 5
+240 0 0 Red 6
+226 0 0 Red 7
+210 0 0 Red 8
+192 0 0 Red 9
+161 0 0 Red 10
+146 0 0 Red 11
+133 0 0 Red 12
+121 0 0 Red 13
+107 0 0 Red 14
+94 0 0 Red 15
+82 0 0 Red 16
+69 0 0 Red 17
+54 0 0 Red 18
+36 0 0 Red 19
+208 212 232 Blue 1
+164 173 211 Blue 2
+125 137 192 Blue 3
+85 101 173 Blue 4
+46 65 155 Blue 5
+44 62 147 Blue 6
+42 59 139 Blue 7
+40 56 130 Blue 8
+38 52 120 Blue 9
+34 46 103 Blue 10
+32 43 95 Blue 11
+31 41 88 Blue 12
+29 38 81 Blue 13
+28 36 73 Blue 14
+26 33 66 Blue 15
+25 31 60 Blue 16
+23 28 53 Blue 17
+21 25 44 Blue 18
+19 22 34 Blue 19
+219 238 220 Green 1
+187 223 188 Green 2
+157 209 158 Green 3
+127 195 129 Green 4
+98 182 100 Green 5
+92 171 94 Green 6
+87 161 88 Green 7
+81 150 82 Green 8
+74 137 75 Green 9
+62 115 63 Green 10
+56 104 57 Green 11
+51 95 52 Green 12
+46 86 47 Green 13
+41 76 42 Green 14
+36 67 37 Green 15
+31 59 32 Green 16
+26 49 27 Green 17
+20 38 21 Green 18
+13 25 14 Green 19
+230 197 233 Purple 1
+208 145 212 Purple 2
+187 96 194 Purple 3
+167 48 175 Purple 4
+147 0 157 Purple 5
+138 0 148 Purple 6
+130 0 139 Purple 7
+121 0 129 Purple 8
+111 0 118 Purple 9
+93 0 99 Purple 10
+84 0 90 Purple 11
+76 0 82 Purple 12
+70 0 74 Purple 13
+61 0 66 Purple 14
+54 0 58 Purple 15
+47 0 51 Purple 16
+40 0 43 Purple 17
+31 0 33 Purple 18
+20 0 22 Purple 19
+218 218 218 Black 1
+183 183 183 Black 2
+152 152 152 Black 3
+121 121 121 Black 4
+90 90 90 Black 5
+84 84 84 Black 6
+79 79 79 Black 7
+74 74 74 Black 8
+68 68 68 Black 9
+57 57 57 Black 10
+51 51 51 Black 11
+47 47 47 Black 12
+42 42 42 Black 13
+37 37 37 Black 14
+33 33 33 Black 15
+29 29 29 Black 16
+24 24 24 Black 17
+19 19 19 Black 18
+12 12 12 Black 19
+231 215 206 Brown 1
+208 179 161 Brown 2
+188 146 120 Brown 3
+168 113 79 Brown 4
+148 80 39 Brown 5
+139 75 36 Brown 6
+131 71 34 Brown 7
+122 66 32 Brown 8
+111 60 29 Brown 9
+93 50 24 Brown 10
+84 45 22 Brown 11
+77 41 20 Brown 12
+70 38 18 Brown 13
+62 33 16 Brown 14
+54 29 14 Brown 15
+48 25 12 Brown 16
+40 21 10 Brown 17
+31 17 8 Brown 18
+21 11 5 Brown 19
+255 226 197 Orange 1
+255 199 145 Orange 2
+255 174 96 Orange 3
+255 150 48 Orange 4
+255 126 0 Orange 5
+241 119 0 Orange 6
+228 113 1 Orange 7
+213 106 2 Orange 8
+196 98 3 Orange 9
+167 85 5 Orange 10
+152 78 6 Orange 11
+140 73 7 Orange 12
+129 67 7 Orange 13
+116 61 8 Orange 14
+103 56 9 Orange 15
+92 51 10 Orange 16
+80 45 10 Orange 17
+66 38 11 Orange 18
+49 30 12 Orange 19
+248 248 248 White 1
+242 242 242 White 2
+236 236 236 White 3
+230 230 230 White 4
+225 225 225 White 5
+214 214 214 White 6
+203 203 203 White 7
+191 191 191 White 8
+177 177 177 White 9
+153 153 153 White 10
+141 141 141 White 11
+131 131 131 White 12
+123 123 123 White 13
+112 112 112 White 14
+102 102 102 White 15
+93 93 93 White 16
+83 83 83 White 17
+71 71 71 White 18
+57 57 57 White 19
+208 243 240 Teal 1
+165 232 227 Teal 2
+126 222 215 Teal 3
+87 212 203 Teal 4
+48 203 192 Teal 5
+45 191 181 Teal 6
+42 180 170 Teal 7
+39 167 158 Teal 8
+36 153 145 Teal 9
+30 128 121 Teal 10
+27 116 110 Teal 11
+25 106 100 Teal 12
+22 96 91 Teal 13
+20 85 80 Teal 14
+17 75 71 Teal 15
+15 65 62 Teal 16
+13 55 52 Teal 17
+10 43 40 Teal 18
+6 28 27 Teal 19
+244 219 200 Light Red 1
+235 187 150 Light Red 2
+226 157 104 Light Red 3
+217 127 58 Light Red 4
+209 98 13 Light Red 5
+197 92 12 Light Red 6
+185 87 11 Light Red 7
+172 81 10 Light Red 8
+158 74 9 Light Red 9
+132 62 8 Light Red 10
+119 56 7 Light Red 11
+109 51 6 Light Red 12
+99 46 6 Light Red 13
+88 41 5 Light Red 14
+77 36 4 Light Red 15
+67 31 4 Light Red 16
+57 26 3 Light Red 17
+44 20 2 Light Red 18
+29 13 1 Light Red 19
+228 199 199 Dark Red 1
+204 148 148 Dark Red 2
+182 101 101 Dark Red 3
+160 54 54 Dark Red 4
+138 8 8 Dark Red 5
+130 7 7 Dark Red 6
+122 7 7 Dark Red 7
+114 6 6 Dark Red 8
+104 6 6 Dark Red 9
+87 5 5 Dark Red 10
+79 4 4 Dark Red 11
+72 4 4 Dark Red 12
+65 3 3 Dark Red 13
+58 3 3 Dark Red 14
+51 2 2 Dark Red 15
+44 2 2 Dark Red 16
+37 2 2 Dark Red 17
+29 1 1 Dark Red 18
+19 1 1 Dark Red 19
+197 234 255 Light Blue 1
+145 215 255 Light Blue 2
+96 198 255 Light Blue 3
+48 181 255 Light Blue 4
+0 164 255 Light Blue 5
+0 155 242 Light Blue 6
+0 146 230 Light Blue 7
+0 137 216 Light Blue 8
+0 126 200 Light Blue 9
+0 107 173 Light Blue 10
+0 98 160 Light Blue 11
+0 90 149 Light Blue 12
+0 83 138 Light Blue 13
+0 74 126 Light Blue 14
+0 67 115 Light Blue 15
+0 60 105 Light Blue 16
+0 52 93 Light Blue 17
+0 42 80 Light Blue 18
+0 31 64 Light Blue 19
+213 255 148 Bright Green 1
+194 255 108 Bright Green 2
+176 255 72 Bright Green 3
+158 255 36 Bright Green 4
+140 255 0 Bright Green 5
+134 244 0 Bright Green 6
+129 233 0 Bright Green 7
+123 222 0 Bright Green 8
+116 208 0 Bright Green 9
+105 185 0 Bright Green 10
+99 173 0 Bright Green 11
+94 163 0 Bright Green 12
+90 155 0 Bright Green 13
+85 144 0 Bright Green 14
+80 134 0 Bright Green 15
+75 126 0 Bright Green 16
+71 116 0 Bright Green 17
+65 104 0 Bright Green 18
+58 91 0 Bright Green 19
+255 236 178 Bright Orange 1
+255 225 130 Bright Orange 2
+255 216 87 Bright Orange 3
+255 207 43 Bright Orange 4
+255 198 0 Bright Orange 5
+247 189 0 Bright Orange 6
+240 180 0 Bright Orange 7
+231 171 0 Bright Orange 8
+222 159 0 Bright Orange 9
+206 140 0 Bright Orange 10
+197 131 0 Bright Orange 11
+191 123 0 Bright Orange 12
+184 116 0 Bright Orange 13
+177 107 0 Bright Orange 14
+170 99 0 Bright Orange 15
+164 92 0 Bright Orange 16
+157 84 0 Bright Orange 17
+149 75 0 Bright Orange 18
+140 64 0 Bright Orange 19
+255 246 183 Gold 1
+255 245 158 Gold 2
+255 244 135 Gold 3
+255 243 112 Gold 4
+255 243 90 Gold 5
+249 233 86 Gold 6
+243 224 82 Gold 7
+237 214 77 Gold 8
+230 203 72 Gold 9
+217 183 64 Gold 10
+211 173 59 Gold 11
+206 164 56 Gold 12
+201 157 52 Gold 13
+195 148 48 Gold 14
+190 139 45 Gold 15
+186 132 42 Gold 16
+180 123 38 Gold 17
+174 113 34 Gold 18
+167 102 29 Gold 19
