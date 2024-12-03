@@ -17,6 +17,8 @@ def parse_args(argv):
     parser = argparse.ArgumentParser(
             prog='sprite_manager',
             description='automate transformation of sprites')
+    parser.add_argument('-U', '--update-only', action='store_true', default=False, 
+            help="Only update out of date files (instead of recomputing them all)")
     subparsers = parser.add_subparsers(required=True, dest='subcommand')
 
     teamcolors = [str(color).lower().removeprefix("base ").replace(" ", "") for color in Color]

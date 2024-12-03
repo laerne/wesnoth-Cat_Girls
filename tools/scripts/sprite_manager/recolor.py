@@ -25,13 +25,11 @@ def _recolor_image(
         output_palette : Palette):
     pixels = image.load()
     assert len(input_palette.rgb_shades) == len(output_palette.rgb_shades)
-    accumulator = 0
     for x in range(image.width):
         for y in range(image.height):
             r, g, b, a = pixels[x, y]
             if (r, g, b) not in input_palette.rgb_shades:
                 continue
-            accumulator += 1
             k = input_palette.rgb_shades.index((r, g, b))
             r, g, b = output_palette.rgb_shades[k]
             pixels[x, y] = r, g, b, a
@@ -81,7 +79,9 @@ def recolor_folder(
         input_color   : Palettable                        = Color.BaseMagenta,
         output_colors : Palettable | Iterable[Palettable] = Color.wesnoth_colors,
         separate_colors_by_subfolders=False,
-        add_color_suffixes=False):
+        add_color_suffixes=False,
+        update_only=False,
+        ):
     
     assert isPalettable(input_color)
     if isPalettable(output_colors):
@@ -111,6 +111,7 @@ def recolor_folder(
             output_path_for_color,
             transform_file_cb,
             output_suffix=color_suffix,
+            update_only=update_only,
             )
 
 
@@ -128,5 +129,6 @@ def run_recolor(args):
         output_colors = co_output_colors,
         separate_colors_by_subfolders = args.color_folders,
         add_color_suffixes = args.color_suffixes,
+        update_only=args.update_only,
     )
 

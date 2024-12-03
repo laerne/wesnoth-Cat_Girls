@@ -1,13 +1,18 @@
 # BBD's Krita Script Starter Feb 2018
 
-from krita import *
 import os
 import os.path
-import time
+import sys
 
 from .dsl import *
 
-app = Krita.instance()
+try:
+    from krita import *
+    app = Krita.instance()
+except ImportError:
+    Extension = object
+    app = None
+    print("//!!\\\\ Could not import krita.", file=sys.stderr)
 
 EXTENSION_ID = 'pykrita_wesnoth_sprite_exporter'
 MENU_ENTRY = 'Wesnoth Sprite Exporter'

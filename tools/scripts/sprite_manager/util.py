@@ -13,6 +13,21 @@ def get_root():
     except (FileNotFoundError, CalledProcessError):
         dn = os.path.dirname
         return dn(dn(dn(dn(__file__))))
+    
+def _newer_than(candidate_path, *comparison_paths):
+    "Return true if candidate path is newer than every path in comparisons_path."
+    try:
+        candidate_mtime = os.path.getmtime(candidate_path)
+    except OSError:
+        return False
+    try:
+        return all(candidate_mtime > os.path.getmtime(path) for path in comparison_paths)
+    except OSError:
+        raise OSError("Some input files are non-existant.")
+    
+def newer_than(candidate_path, *comparison_paths):
+    result = _newer_than(candidate_path, *comparison_paths)
+    return result
 
 def save_image(image, path):
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -41,6 +56,7 @@ def transform_files_recursively(
         output_extension = None,
         allowed_extension = (".png", ".jpg", ".jpeg"),
         verbosity = 'file',
+        update_only = False,
         ):
     input_path  = convert_path(input_path)
     output_path = convert_path(output_path)
@@ -64,11 +80,17 @@ def transform_files_recursively(
                 output_file = f"{file_basename}{output_suffix}{file_ext}"
                 input_path  = os.path.join(input_folder,  input_file)
                 output_path = os.path.join(output_folder, output_file)
+
+                if update_only and newer_than(output_path, input_path):
+                    if verbosity == 'file':
+                        print(f"Up-to-date: {output_path}")
+                    continue
+                
                 if verbosity == 'file':
                     if output_file != input_file:
                         print(f"Transforming: {input_path}\nto: {output_path}...")
                     else:
-                        print(f"Updating: {input_path}")
+                        print(f"Updating: {output_path}")
                 transform_file_cb(input_path, output_path)
     else:
         raise ValueError(f"{input_path} is neither an existing file nor an existing directory")
