@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 cd "$(git rev-parse --show-toplevel)"
 
-python -m sprite_manager -U recolor -i :/images/units -o :/images-recolored/units --color-suffixes --color-folders     \
+python -m sprite_manager $@ recolor -i :/images/units -o :/images-recolored/units --color-suffixes --color-folders     \
     --from magenta,cyan                                                                                                \
     --to red,indianyellow                                                                                              \
     --to blue,indianyellow                                                                                             \
@@ -22,7 +22,7 @@ python -m sprite_manager -U recolor -i :/images/units -o :/images-recolored/unit
 for input_color_folder in images-recolored/units/*; do
     color_suffix=$(basename "$input_color_folder")
 
-    python -m sprite_manager -U animate --delay 200                                                                    \
+    python -m sprite_manager $@ animate --delay 200                                                                    \
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-base-${color_suffix}.png"               \
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand1-${color_suffix}.png"             \
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand2-${color_suffix}.png"             \
@@ -41,13 +41,13 @@ for input_color_folder in images-recolored/units/*; do
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand15-${color_suffix}.png"            \
         --output "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-${color_suffix}.gif"
 
-    python -m sprite_manager -U animate --delay 200                                                                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run0-${color_suffix}.png"               \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run1-${color_suffix}.png"               \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run2-${color_suffix}.png"               \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run3-${color_suffix}.png"               \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run4-${color_suffix}.png"               \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run5-${color_suffix}.png"               \
-        --output "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-${color_suffix}.gif"
+    python -m sprite_manager $@ animate --delay 200                                                                    \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run0-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run1-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run2-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run3-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run4-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run5-${color_suffix}.png"            \
+        --output "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run-${color_suffix}.gif"
 done
 

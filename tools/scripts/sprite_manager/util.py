@@ -58,20 +58,20 @@ def transform_files_recursively(
         verbosity = 'file',
         update_only = False,
         ):
-    input_path  = convert_path(input_path)
-    output_path = convert_path(output_path)
+    root_input_path  = convert_path(input_path)
+    root_output_path = convert_path(output_path)
 
-    if os.path.isfile(input_path):
-        output_base, output_ext = os.path.splitext(output_path)
+    if os.path.isfile(root_input_path):
+        output_base, output_ext = os.path.splitext(root_output_path)
         if output_extension is not None: output_ext = output_extension
         output_path = f"{output_base}{output_suffix}{output_ext}"
-        transform_file_cb(input_path, output_path)
-    elif os.path.isdir(input_path):
-        for input_folder, subfolders, subfiles in os.walk(input_path):
+        transform_file_cb(root_input_path, output_path)
+    elif os.path.isdir(root_input_path):
+        for input_folder, subfolders, subfiles in os.walk(root_input_path):
             if not subfiles:
                 continue
-            relative_folder = os.path.relpath(input_folder, input_path)
-            output_folder = os.path.join(output_path, relative_folder)
+            relative_folder = os.path.relpath(input_folder, root_input_path)
+            output_folder = os.path.join(root_output_path, relative_folder)
             for input_file in human_sorted(subfiles):
                 if allowed_extension and not input_file.endswith(allowed_extension):
                     continue
@@ -88,7 +88,7 @@ def transform_files_recursively(
                 
                 if verbosity == 'file':
                     if output_file != input_file:
-                        print(f"Transforming: {input_path}\nto: {output_path}...")
+                        print(f"Transforming: {input_path}\nto: {output_path}")
                     else:
                         print(f"Updating: {output_path}")
                 transform_file_cb(input_path, output_path)

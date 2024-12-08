@@ -17,7 +17,7 @@ def animate_file(sprites_with_times, output_path, update_only=False):
 
     images = [Image.open(path) for path in paths]
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    print(f"Creating: {output_path}...")
+    print(f"Creating: {output_path}")
     images[0].save(output_path,
                    save_all=True,
                    append_images=images[1:],
