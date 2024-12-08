@@ -111,33 +111,25 @@ class WesnothSpriteExporter(Extension):
             wseString = wseStream.read()
         self.iterationInfo = parse_iteration_instruction(wseString)
 
-    def exportForTags(self, tags):
+    def exportForTags(self, path, tags):
         print(f"Exporting for tags {tags}...")
-        replacement_symbols = tags_to_replacement_symbols(tags)
-        pathComponents = []
 
         def setHideLayerAccordinglyToTags(layer):
             uid = layer.uniqueId()
             identifierInfo = self.identifierInfos[uid]
             visible = identifierInfo.match_tags(tags)
             layer.setVisible(visible)
-            #print(f"  Layer {'  '.join(makeLayerPath(layer))} would be {'VISIBLE' if visible else 'hidden'}.")
-            if visible:
-                print(f"  ...will show layer {'  '.join(makeLayerPath(layer))}")
-                nameComponent = identifierInfo._make_name(tags, replacement_symbols)
-                pathComponents.append(nameComponent)
-                #print(f"  It will have the component {nameComponent}")
+            # print(f"  Layer {'  '.join(makeLayerPath(layer))} would be {'VISIBLE' if visible else 'hidden'}.")
+            # print(f"  layer tags = {[subinfo.tags for subinfo in identifierInfo.subinfos]}")
+            # if visible: print(f"  ...will show layer {'  '.join(makeLayerPath(layer))}")
             return visible
         
         clonedDocument = self.currentDocument.clone()
         clonedDocumentIterable = LayerIterable(clonedDocument, skipRoot=True, skipPattern="No Name")
         clonedDocumentIterable.iterWithCallback(setHideLayerAccordinglyToTags)
 
-        path = join_names(*pathComponents)
-        print(f"Export for those tags would join {pathComponents} to {repr(path)}")
         path += ".kra"
         print(f"Exporting to filename {repr(path)}...")
-
         
         if not os.path.isabs(path):
             documentFileName = self.currentDocument.fileName()
@@ -159,8 +151,8 @@ class WesnothSpriteExporter(Extension):
 
             self.loadIterationInfo()
             self.loadLayerIdentifierInfo()
-            for tags in self.iterationInfo:
-                self.exportForTags(tags)
+            for path, tags in self.iterationInfo:
+                self.exportForTags(path, tags)
         finally:
             self.restoreVisibilities()
             self.currentDocument.setBatchmode(previousBatchMode)
