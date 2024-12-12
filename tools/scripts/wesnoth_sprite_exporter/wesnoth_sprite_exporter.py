@@ -133,7 +133,7 @@ class WesnothSpriteExporter(Extension):
         
         if not os.path.isabs(path):
             documentFileName = self.currentDocument.fileName()
-            path = os.path.join(os.path.dirname(documentFileName), "exports", path)
+            path = os.path.join(os.path.dirname(documentFileName), path)
         folder = os.path.dirname(path)
         os.makedirs(folder, exist_ok=True)
         clonedDocument.setBatchmode(True)

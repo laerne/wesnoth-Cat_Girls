@@ -153,7 +153,7 @@ def parse_iteration_instruction(instruction):
             continue
         for subinstruction in instruction_line.split(";"):
             cartesian_product_info = IterationCartesianProductInfo()
-            cartesian_product_info.formattable_name = _tag_re.sub(R"{\g<id>}", subinstruction.partition(':')[0].strip())
+            cartesian_product_info.formattable_name = _tag_re.sub(R"{\g<id>}", subinstruction.partition('|')[0].strip())
             for tag in _tag_re.finditer(subinstruction):
                 tag_id = tag.group("id")
                 domain = make_domain(tag.group("domain"))

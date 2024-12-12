@@ -5,49 +5,109 @@ python -m sprite_manager $@ recolor -i :/images/units -o :/images-recolored/unit
     --from magenta,cyan                                                                                                \
     --to red,indianyellow                                                                                              \
     --to blue,indianyellow                                                                                             \
-    --to green,indigo                                                                                                  \
+    --to green,indianyellow                                                                                            \
     --to purple,indianyellow                                                                                           \
     --to black,indianyellow                                                                                            \
-    --to brown,skyblue                                                                                                 \
-    --to orange,skyblue                                                                                                \
-    --to white,white                                                                                                   \
+    --to brown,indianyellow                                                                                            \
+    --to orange,indianyellow                                                                                           \
+    --to white,indianyellow                                                                                            \
     --to teal,indianyellow                                                                                             \
-    --to lightred,skyblue                                                                                              \
+    --to lightred,indianyellow                                                                                         \
     --to darkred,indianyellow                                                                                          \
     --to lightblue,indianyellow                                                                                        \
+    --to brightgreen,indianyellow                                                                                      \
+    --to brightorange,indianyellow                                                                                     \
+    --to gold,indianyellow                                                                                             \
+    --to red,indigo                                                                                                    \
+    --to blue,indigo                                                                                                   \
+    --to green,indigo                                                                                                  \
+    --to purple,indigo                                                                                                 \
+    --to black,indigo                                                                                                  \
+    --to brown,indigo                                                                                                  \
+    --to orange,indigo                                                                                                 \
+    --to white,indigo                                                                                                  \
+    --to teal,indigo                                                                                                   \
+    --to lightred,indigo                                                                                               \
+    --to darkred,indigo                                                                                                \
+    --to lightblue,indigo                                                                                              \
     --to brightgreen,indigo                                                                                            \
+    --to brightorange,indigo                                                                                           \
+    --to gold,indigo                                                                                                   \
+    --to red,skyblue                                                                                                   \
+    --to blue,skyblue                                                                                                  \
+    --to green,skyblue                                                                                                 \
+    --to purple,skyblue                                                                                                \
+    --to black,skyblue                                                                                                 \
+    --to brown,skyblue                                                                                                 \
+    --to orange,skyblue                                                                                                \
+    --to white,skyblue                                                                                                 \
+    --to teal,skyblue                                                                                                  \
+    --to lightred,skyblue                                                                                              \
+    --to darkred,skyblue                                                                                               \
+    --to lightblue,skyblue                                                                                             \
+    --to brightgreen,skyblue                                                                                           \
     --to brightorange,skyblue                                                                                          \
-    --to gold,indigo
+    --to gold,skyblue                                                                                                  \
+    --to red,red                                                                                                       \
+    --to blue,blue                                                                                                     \
+    --to green,green                                                                                                   \
+    --to purple,purple                                                                                                 \
+    --to black,black                                                                                                   \
+    --to brown,brown                                                                                                   \
+    --to orange,orange                                                                                                 \
+    --to white,white                                                                                                   \
+    --to teal,teal                                                                                                     \
+    --to lightred,lightred                                                                                             \
+    --to darkred,darkred                                                                                               \
+    --to lightblue,lightblue                                                                                           \
+    --to brightgreen,brightgreen                                                                                       \
+    --to brightorange,brightorange                                                                                     \
+    --to gold,gold                                                                                                     \
 
 for input_color_folder in images-recolored/units/*; do
     color_suffix=$(basename "$input_color_folder")
 
     python -m sprite_manager $@ animate --delay 200                                                                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-base-${color_suffix}.png"               \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand1-${color_suffix}.png"             \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand2-${color_suffix}.png"             \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand3-${color_suffix}.png"             \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand4-${color_suffix}.png"             \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand5-${color_suffix}.png"             \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand6-${color_suffix}.png"             \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand7-${color_suffix}.png"             \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand8-${color_suffix}.png"             \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand9-${color_suffix}.png"             \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand10-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand11-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand12-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand13-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand14-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand15-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-${color_suffix}.png"                    \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-1-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-2-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-3-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-4-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-5-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-6-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-7-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-8-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-9-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-10-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-11-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-12-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-13-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-14-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-15-${color_suffix}.png"           \
         --output "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-${color_suffix}.gif"
 
     python -m sprite_manager $@ animate --delay 200                                                                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run0-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run1-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run2-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run3-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run4-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run5-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-0-${color_suffix}.png"              \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-1-${color_suffix}.png"              \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-2-${color_suffix}.png"              \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-3-${color_suffix}.png"              \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-4-${color_suffix}.png"              \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-5-${color_suffix}.png"              \
         --output "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run-${color_suffix}.gif"
+
+    python -m sprite_manager $@ animate --delay 200                                                                    \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-${color_suffix}.png"                                     \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-stand-1-${color_suffix}.png"                             \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-stand-2-${color_suffix}.png"                             \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-stand-3-${color_suffix}.png"                             \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-stand-4-${color_suffix}.png"                             \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-stand-5-${color_suffix}.png"                             \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-stand-6-${color_suffix}.png"                             \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-stand-7-${color_suffix}.png"                             \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-stand-8-${color_suffix}.png"                             \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-stand-9-${color_suffix}.png"                             \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-stand-10-${color_suffix}.png"                            \
+        --frame "${input_color_folder}/feu-ra/mystics/seer-ne-stand-11-${color_suffix}.png"                            \
+        --output "${input_color_folder}/feu-ra/mystics/seer-ne-stand-${color_suffix}.gif"
 done
 
