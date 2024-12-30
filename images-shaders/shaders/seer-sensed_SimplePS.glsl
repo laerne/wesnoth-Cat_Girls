@@ -24,6 +24,24 @@ const float sqrt5 = 2.2360679774997896964091736687312762354406183596115257242708
 const float pi    = 3.14159265358979323846264338327950288419716939937510582097494459230781640628;
 const float tau   = 6.28318530717958647692528676655900576839433879875021164194988918461563281257;
 
+// Wesnoth team colors
+const vec3 pinkBaseColor         = vec3(0.96,0.60,0.76); // #f49ac1
+const vec3 redTeamColor          = vec3(1.00,0.00,0.00); // #FF0000
+const vec3 lightredTeamColor     = vec3(0.82,0.38,0.05); // #D1620D
+const vec3 darkredTeamColor      = vec3(0.54,0.03,0.03); // #8A0808
+const vec3 blueTeamColor         = vec3(0.18,0.25,0.61); // #2E419B
+const vec3 lightblueTeamColor    = vec3(0.00,0.64,1.00); // #00A4FF
+const vec3 greenTeamColor        = vec3(0.38,0.71,0.39); // #62B664
+const vec3 brightgreenTeamColor  = vec3(0.55,1.00,0.00); // #8CFF00
+const vec3 purpleTeamColor       = vec3(0.58,0.00,0.62); // #93009D
+const vec3 blackTeamColor        = vec3(0.35,0.35,0.35); // #5A5A5A
+const vec3 brownTeamColor        = vec3(0.58,0.31,0.15); // #945027
+const vec3 orangeTeamColor       = vec3(1.00,0.49,0.00); // #FF7E00
+const vec3 brightorangeTeamColor = vec3(1.00,0.78,0.00); // #FFC600
+const vec3 whiteTeamColor        = vec3(0.88,0.88,0.88); // #E1E1E1
+const vec3 tealTeamColor         = vec3(0.19,0.80,0.75); // #30CBC0
+const vec3 goldTeamColor         = vec3(1.00,0.95,0.35); // #FFF35A
+
 bool isInRect(vec2 pos, Rect rect)
 {
     return pos.x >= rect.pos.x && pos.x < (rect.pos.x + rect.size.x)
@@ -250,38 +268,206 @@ int tileNorm(ivec2 ij)
     return cubeCoordNorm(toCubeCoords(ij));
 }
 
+float intervalIndicator(float x, float a, float b)
+{
+    return float(x >= a && x <= b);
+}
+
+float centeredIntervalIndicator(float x, float center, float width)
+{
+    float halfWidth = width * 0.5f;
+    return intervalIndicator(x, center - halfWidth, center + halfWidth);
+}
+
+float cubicBump(float x)
+{
+    float ax = abs(x);
+    float xx = ax * ax;
+    return 2.f * xx * ax - 3.f * xx + 1.f;
+}
+
+float cubicHalfPlateau(float x)
+{
+    if (x < 0.f) return 0.f;
+    if (x > 1.f) return 1.f;
+    return cubicBump(1.f - x);
+}
+
+float cubicHalfPlateau(float x, float slopeStart, float slopeEnd)
+{
+    return cubicHalfPlateau((x - slopeStart) / (x - slopeEnd));
+}
+
+float assymmetricCubicPlateau(
+    float x, 
+    float leftSupportBound, 
+    float rightSupportBound, 
+    float leftSlopeDistance, 
+    float rightSlopeDitance)
+{
+    float fromLeftHalfPlateau  = cubicHalfPlateau((x - leftSupportBound)  / leftSlopeDistance);
+    float fromRightHalfPlateau = cubicHalfPlateau((rightSupportBound - x) / rightSlopeDitance);
+
+    return min(fromLeftHalfPlateau, fromRightHalfPlateau);
+}
+
+// See https://math.stackexchange.com/questions/121720/ease-in-out-function
+
+const int noEaseFn              = 0;
+const int easeInFn              = 1;
+const int easeOutFn             = 2;
+const int easeInOutFn           = 3;
+
+float _easeIn(float x, float gamma)
+{
+    return pow(x, gamma);
+}
+
+float _easeOut(float x, float gamma)
+{
+    return 1.f - pow(1.f - x, gamma);
+}
+
+float _easeInOut(float x, float gamma)
+{
+    float xGamma = pow(x, gamma);
+    return xGamma / (xGamma + pow(1.f - x, gamma));
+}
+
+float easeIn(float x, float gamma)
+{
+    if (x < 0.f) return 0.f;
+    if (x > 1.f) return 1.f;
+    return _easeIn(x, gamma);
+}
+
+float easeOut(float x, float gamma)
+{
+    if (x < 0.f) return 0.f;
+    if (x > 1.f) return 1.f;
+    return _easeOut(x, gamma);
+}
+
+float easeInOut(float x, float gamma)
+{
+    if (x < 0.f) return 0.f;
+    if (x > 1.f) return 1.f;
+    return _easeInOut(x, gamma);
+}
+
+float ease(float x, int ease, float gamma)
+{
+    if (x < 0.f) return 0.f;
+    if (x > 1.f) return 1.f;
+    switch(ease)
+    {
+        case noEaseFn:    return x;
+        case easeInFn:    return _easeIn(x, gamma);
+        case easeOutFn:   return _easeOut(x, gamma);
+        case easeInOutFn: return _easeInOut(x, gamma);
+    }
+    return x;
+}
+
+float pulse(
+    float x,
+    float time,
+    float startTime,
+    float endTime,
+    float fadeInDistance,
+    float fadeOutDistance,
+    float startWidth,
+    float endWidth,
+    float fuzzyness,
+    int   speedEaseFn,
+    float speedGamma
+)
+{
+    float linearRightPos = (time - startTime) / (endTime - startTime);
+    float rightPos       = ease(linearRightPos, speedEaseFn, speedGamma);
+
+    float width         = rightPos * endWidth + (1.f - rightPos) * startWidth;
+    float halfWidth     = width * 0.5f;
+    float pulseValueAtX = assymmetricCubicPlateau(x, rightPos - width, rightPos, fuzzyness, fuzzyness);
+
+    float intensity = assymmetricCubicPlateau(rightPos, 0.f, 1.f, fadeInDistance, fadeOutDistance);
+    return pulseValueAtX * intensity;
+}
+
+float animation1d(float x, float t)
+{
+    float v = 0.f;
+    v = max(v, pulse(
+        x,
+        t,
+        0.f, /* startTime */
+        3.f, /* endTime */
+        0.1f, /* fadeInDistance */
+        0.1f, /* fadeOutDistance */
+        0.2f, /* startWidth */
+        0.125f, /* endWidth */
+        0.025f, /* fuzzyness */
+        easeOutFn, /* speedEaseFn */
+        2.f /* speedGamma */
+    ));
+    v = max(v, pulse(
+        x,
+        t,
+        0.75f, /* startTime */
+        3.75f, /* endTime */
+        0.1f, /* fadeInDistance */
+        0.1f, /* fadeOutDistance */
+        0.2f, /* startWidth */
+        0.125f, /* endWidth */
+        0.025f, /* fuzzyness */
+        easeOutFn, /* speedEaseFn */
+        2.f /* speedGamma */
+    ));
+    v = max(v, pulse(
+        x,
+        t,
+        1.5f, /* startTime */
+        4.5f, /* endTime */
+        0.1f, /* fadeInDistance */
+        0.1f, /* fadeOutDistance */
+        0.2f, /* startWidth */
+        0.125f, /* endWidth */
+        0.025f, /* fuzzyness */
+        easeOutFn, /* speedEaseFn */
+        2.f /* speedGamma */
+    ));
+
+    return v;
+}
+
 // Draw the hexagons of the board.
 // imagePos: position, in pixels, relative to the center of the screen.
 // imagePos: rectangle, relative, relative to the center of the screen.
 vec4 paintTiling(vec2 imagePos, Rect imageRect)
 {
-    // Get info about tile containing imagePos
-    ivec2 ij = findClosestTileCoord(imagePos, wesnothTileLength);
-    vec2 ijCenter = tileCenter(ij, wesnothTileLength);
-    vec2 tilePos = imagePos - ijCenter;
-
-    // Get info of position within that tile
-    float d = diamondHexagonalTileDistance(tilePos, wesnothTileLength);
-    float a = normalizedTileAmplitude(tilePos);
-
-    // Make a fun color animation.
-    float step = 0.25f * round(d * 4.f);
-    float factor = smod(a - uTime * 0.25, 1.0);
-    ivec3 qrs = toCubeCoords(ij);
-    vec3 baseColor = qrs == ivec3(0)        ? vec3(1.f)
-                   : cubeCoordNorm(qrs) > 3 ? vec3(0.f)
-                   :                          smod(vec3(qrs) * 0.1, 1.f);
-    vec4 color = vec4(step * factor * baseColor, 1.f);
-
-    // Periodically hatch pixels that are outside the image to render
-    bool inImage = isInRect(imagePos, imageRect);
-    float imageMask = inImage ? 1.f : 0.f;
-    if (!inImage)
+    vec4 color = vec4(0.f);
+    float d = diamondHexagonalTileDistance(imagePos, wesnothTileLength);
+    if (d < 1.f)
     {
-        float mixFactor = smod(uTime * 0.25f, 1.f) < 0.5 ? 0.f : sin((imagePos.x - imagePos.y) * 0.5) < 0.5f ? 0.f : 1.f;
-        vec4 warningColor = vec4(0.6f, 0, 1, 1);
-        color = mix(color, warningColor, mixFactor);
+        const float speedFactor = 3.f;
+        const float loopDuration = 5.f;
+        float t = uTime * speedFactor;
+        if (loopDuration > 0.f)
+            t = mod(t, loopDuration);
+
+        color.a = animation1d(d, t);
+        color.rgb = vec3(1.f) * color.a;
     }
+
+    // // Periodically hatch pixels that are outside the image to render
+    // bool inImage = isInRect(imagePos, imageRect);
+    // float imageMask = inImage ? 1.f : 0.f;
+    // if (!inImage)
+    // {
+    //     float mixFactor = smod(uTime * 0.25f, 1.f) < 0.5 ? 0.f : sin((imagePos.x - imagePos.y) * 0.5) < 0.5f ? 0.f : 1.f;
+    //     vec4 warningColor = vec4(0.6f, 0, 1, 1);
+    //     color = mix(color, warningColor, mixFactor);
+    // }
 
     return color;
 }
@@ -291,10 +477,10 @@ void main()
 {
 	// Center must be a integer value, otherwise there are weird roundings.
     vec2 screenCenter = floor(uResolution * 0.5f);
-    // const vec2 imageResolution = vec2(      wesnothTileLength,      wesnothTileLength); // only the center tile
+    const vec2 imageResolution = vec2(      wesnothTileLength,      wesnothTileLength); // only the center tile
     // const vec2 imageResolution = vec2(2.5 * wesnothTileLength,  3 * wesnothTileLength); // tile radius of 1
     // const vec2 imageResolution = vec2(4   * wesnothTileLength,  5 * wesnothTileLength); // tile radius of 2
-    const vec2 imageResolution = vec2(5.5 * wesnothTileLength,  7 * wesnothTileLength); // tile radius of 3
+    // const vec2 imageResolution = vec2(5.5 * wesnothTileLength,  7 * wesnothTileLength); // tile radius of 3
     // const vec2 imageResolution = vec2(7   * wesnothTileLength,  9 * wesnothTileLength); // tile radius of 4
     // const vec2 imageResolution = vec2(8.5 * wesnothTileLength, 11 * wesnothTileLength); // tile radius of 5
 
