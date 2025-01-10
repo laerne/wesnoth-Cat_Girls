@@ -1,0 +1,24 @@
+# This file defines what sprites to export from a .kra file using wesnoth_sprite_exporter
+# Symbol `#` starts a comment until end of lines, anything in-between is ignored
+#
+# An export line is made of a file path and an extra tags sections, separated by `|` (and possible whitespaces)
+# either of which can define a bunch of tags of the form {tag_name} or {tag_name=tag_value}
+#
+# tag_value can be a simple string or integer, but it also can be multiple comma-separated string values.
+# It also can be one or multiple comma-separated non-negative integer ranges specified using a dash. E.g. `1-3,7,9-12`.
+# When there are many possible values for some tags on a line, the exporter will iterate over all possible values.
+# (Therefore one line might define multiple output files)
+#
+# The final filename is the name left of "|", stripped of whitespaces and with its tags replaced by its current tag value.
+# If the path is relative, it is relative to the folder containing this file and the .kra file.
+# In the case the tag has no associated tag_value, it is replaced with the tag itself.
+
+exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}                       | {stand} {se} {k=0}
+exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{stand}-{k=1-15}      | {se}
+exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{throw}-{k=1-16}      | {se}
+exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{run}-{k=0-5}         | {se}
+exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}                  | {stand} {k=0}
+exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{stand}-{k=1-15}
+exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{run}-{k=0-5}    |
+exports/{projectiles}/{chakram}-{k=0-2}
+

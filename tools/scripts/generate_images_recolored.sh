@@ -105,11 +105,24 @@ for input_color_folder in images-recolored/units/*; do
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-15-${color_suffix}.png"           \
         --output "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-${color_suffix}.gif"
 
-    python -m sprite_manager $@ animate --delay 200                                                                    \
+    python -m sprite_manager $@ animate --delay 100                                                                    \
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-${color_suffix}.png"                    \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-1-${color_suffix}.png"            \
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-2-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-3-${color_suffix}.png"            \
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-4-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-5-${color_suffix}.png"            \
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-6-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-7-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-8-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-9-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-10-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-11-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-12-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-13-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-14-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-15-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-16-${color_suffix}.png"           \
         --output "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-${color_suffix}.gif"
 
     python -m sprite_manager $@ animate --delay 200                                                                    \
@@ -120,6 +133,25 @@ for input_color_folder in images-recolored/units/*; do
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-4-${color_suffix}.png"              \
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-5-${color_suffix}.png"              \
         --output "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run-${color_suffix}.gif"
+
+    python -m sprite_manager $@ animate --delay 200                                                                    \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-${color_suffix}.png"                 \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-1-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-2-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-3-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-4-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-5-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-6-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-7-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-8-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-9-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-10-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-11-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-12-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-13-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-14-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-15-${color_suffix}.png"        \
+        --output "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-${color_suffix}.gif"
 
     python -m sprite_manager $@ animate --delay 200                                                                    \
         --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-run-0-${color_suffix}.png"           \
@@ -153,49 +185,6 @@ for input_color_folder in images-recolored/units/*; do
         --frame "${input_color_folder}/feu-ra/mystics/seer-${color_suffix}.png"                                        \
         --frame "${input_color_folder}/feu-ra/mystics/seer-stand-1-${color_suffix}.png"                                \
         --output "${input_color_folder}/feu-ra/mystics/seer-stand-${color_suffix}.gif"
-done
-
-for input_color_folder in images-recolored/halo/mystic-sensed/*; do
-    color_suffix=$(basename "$input_color_folder")
-
-    python -m sprite_manager $@ animate --delay 20                                                                     \
-        --frame "${input_color_folder}/mystic-sensed-1-${color_suffix}.png"                                            \
-        --frame "${input_color_folder}/mystic-sensed-2-${color_suffix}.png"                                            \
-        --frame "${input_color_folder}/mystic-sensed-3-${color_suffix}.png"                                            \
-        --frame "${input_color_folder}/mystic-sensed-4-${color_suffix}.png"                                            \
-        --frame "${input_color_folder}/mystic-sensed-5-${color_suffix}.png"                                            \
-        --frame "${input_color_folder}/mystic-sensed-6-${color_suffix}.png"                                            \
-        --frame "${input_color_folder}/mystic-sensed-7-${color_suffix}.png"                                            \
-        --frame "${input_color_folder}/mystic-sensed-8-${color_suffix}.png"                                            \
-        --frame "${input_color_folder}/mystic-sensed-9-${color_suffix}.png"                                            \
-        --frame "${input_color_folder}/mystic-sensed-10-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-11-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-12-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-13-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-14-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-15-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-16-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-17-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-18-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-19-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-20-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-21-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-22-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-23-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-24-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-25-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-26-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-27-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-28-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-29-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-30-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-31-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-32-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-33-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-34-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-35-${color_suffix}.png"                                           \
-        --frame "${input_color_folder}/mystic-sensed-36-${color_suffix}.png"                                           \
-        --output "${input_color_folder}/mystic-sensed-${color_suffix}.gif"
 done
 
 python -m sprite_manager $@ animate --delay 200                                                                        \
