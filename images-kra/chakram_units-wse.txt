@@ -18,7 +18,6 @@ exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{stand}-{k=1-15}      
 exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{throw}-{k=1-16}      | {se}
 exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{run}-{k=0-5}         | {se}
 exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}                  | {stand} {k=0}
-exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{stand}-{k=1-15}
+exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{stand}-{k=1-18}
 exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{run}-{k=0-5}    |
 exports/{projectiles}/{chakram}-{k=0-2}
-

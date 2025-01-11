@@ -1,4 +1,4 @@
-#version 330
+#version 430
 
 uniform vec2 uResolution;
 uniform float uTime;
@@ -115,11 +115,6 @@ float easeInOut(float x, float gamma)
     return _easeInOut(x, gamma);
 }
 
-float easeInOut2(float x, float alpha, float beta)
-{
-    return pow(x, alpha) * (1- pow(1-x, beta));
-}
-
 float ease(float x, int ease, float gamma)
 {
     if (x < 0.f) return 0.f;
@@ -132,6 +127,12 @@ float ease(float x, int ease, float gamma)
         case easeInOutFn: return _easeInOut(x, gamma);
     }
     return x;
+}
+
+// Comput a sine from numbers of turns instead of radians, ranging in [a, b] instead of [-1, 1].
+float sineInTurns(float x, float frequency, float phase, float a, float b)
+{
+    return  ( (a + b) - cos(x * frequency * tau + phase * tau) * (b - a) ) * 0.5f;
 }
 
 float pulse(
@@ -159,63 +160,90 @@ float pulse(
     return pulseValueAtX * intensity;
 }
 
-float animation(float x, float t)
+// Color gradient using technique described in: https://iquilezles.org/articles/palettes/
+// Tweak factors interactively using: http://dev.thi.ng/gradients/
+vec3 colorGradient(float interpolant, vec3 offset, vec3 amplitude, vec3 frequency, vec3 phase)
 {
-    float v = 0.f;
-    v = max(v, pulse(
-        x,
-        t,
-        0.f, /* startTime */
-        3.f, /* endTime */
-        0.1f, /* fadeInDistance */
-        0.1f, /* fadeOutDistance */
-        0.2f, /* startWidth */
-        0.125f, /* endWidth */
-        0.025f, /* fuzzyness */
-        easeOutFn, /* speedEaseFn */
-        2.f /* speedGamma */
-    ));
-    v = max(v, pulse(
-        x,
-        t,
-        0.75f, /* startTime */
-        3.75f, /* endTime */
-        0.1f, /* fadeInDistance */
-        0.1f, /* fadeOutDistance */
-        0.2f, /* startWidth */
-        0.125f, /* endWidth */
-        0.025f, /* fuzzyness */
-        easeOutFn, /* speedEaseFn */
-        2.f /* speedGamma */
-    ));
-    v = max(v, pulse(
-        x,
-        t,
-        1.5f, /* startTime */
-        4.5f, /* endTime */
-        0.1f, /* fadeInDistance */
-        0.1f, /* fadeOutDistance */
-        0.2f, /* startWidth */
-        0.125f, /* endWidth */
-        0.025f, /* fuzzyness */
-        easeOutFn, /* speedEaseFn */
-        2.f /* speedGamma */
-    ));
-
-    return v;
+    return offset + amplitude * cos((interpolant * frequency + phase) * tau);
 }
 
-float fn(float x, float t)
+// Copied from https://github.com/glslify/glsl-easings/blob/master/back-out.glsl
+// MIT license.
+float easeOutBounce(float t) {
+  const float a = 4.0 / 11.0;
+  const float b = 8.0 / 11.0;
+  const float c = 9.0 / 10.0;
+
+  const float ca = 4356.0 / 361.0;
+  const float cb = 35442.0 / 1805.0;
+  const float cc = 16061.0 / 1805.0;
+
+  float t2 = t * t;
+
+  return t < a
+    ? 7.5625 * t2
+    : t < b
+      ? 9.075 * t2 - 9.9 * t + 3.4
+      : t < c
+        ? ca * t2 - cb * t + cc
+        : 10.8 * t * t - 20.52 * t + 10.72;
+}
+
+float radiusFn(float t)
 {
-    float gamma = pow(8.f, t - 1);
-    return easeInOut2(x, gamma, gamma);
+    float bounce = min(easeOutBounce(t * 2.f), 1.f);
+    float fadeOut = 1.f - easeIn(t * 3.f - 2.f, 3.f);
+    return bounce * fadeOut;
+}
+
+float intensityFn(float t)
+{
+    float fadeOut = 1.f - easeIn(t * 6.f - 5.f, 3.f);
+    return fadeOut;
+}
+
+vec3 colorFn(float t)
+{
+    return colorGradient(t, vec3(1.798, 0.500, 0.088), vec3(0.500, 0.500, 0.608), vec3(0.178, 0.358, 0.268), vec3(0.000, 1.588, -0.382));
+}
+
+vec4 animation(float x, float t)
+{
+    const float timeFactor = 1.f / 2.f;
+    float flatRadius   = 0.f;
+    float fuzzyRadius  = 0.05f;
+    float sphereRadius = radiusFn(t * timeFactor) - (flatRadius + fuzzyRadius);
+    float intensity    = intensityFn(t * timeFactor);
+
+    float v = 0.f;
+    if (x < sphereRadius)
+    {
+        float x1 = x / sphereRadius;
+        v = 1 - sqrt(1 - x1 * x1);
+    }
+    else
+    {
+        float x1 = (x - (sphereRadius + flatRadius)) / fuzzyRadius;
+        v = easeIn(1 - x1, 3.f);
+    }
+
+    v = v * intensity;
+    return v * vec4(colorFn(sphereRadius), v);
+}
+
+vec4 revealAlphaWithChecker(vec4 color, vec2 pixelPos)
+{
+    int parity = int(floor(pixelPos.x * 0.125f) + floor(pixelPos.y * 0.125)) % 2;
+    vec4 checkerColor = parity == 0 ? vec4(0.3f, 0.3f, 0.3f, 1.f) : vec4(0.2f, 0.2f, 0.2f, 1.f);
+    vec4 opaqueColor = vec4(color.xyz, 1.f);
+    return mix(checkerColor, opaqueColor, color.a);
 }
 
 void main()
 {
     // Global display settings
-    const float speedFactor = 0.25f;
-    const float loopDuration = 3.f;
+    const float speedFactor = 1.f;
+    const float loopDuration = 2.f;
     const int previewBandThickness = 48;
 
     // Set the domain interval [a, b] and codomain interval [c, d] to observe here
@@ -231,21 +259,25 @@ void main()
         t = mod(t, loopDuration);
 
     // Call your function here, using the following pattern, replacing f by you function name.
-    //   vec3 fx = vec3(f(x)); // Non-temporal function to 1D
-    //   vec3 fx = f(x); // Non-temporal function to 3D
-    //   vec3 fx = vec3(f(x, t)); // temporal function to 1D
-    //   vec3 fx = f(x, t); // temporal function to 3D
-    vec3 fx = vec3(fn(x, t));
+    //   vec4 fx = vec4(vec3(f(x)), 1.f);                  // Non-temporal function to G
+    //   vec4 fx = vec4(0.f, 0.f, f(x)); fx.xy = fx.zz;    // Non-temporal function to GA
+    //   vec4 fx = vec4(f(x), 1.f);                        // Non-temporal function to RGB
+    //   vec4 fx = f(x);                                   // Non-temporal function to RGBA
+    //   vec4 fx = vec4(vec3(f(x, t)), 1.f);               //     temporal function to G
+    //   vec4 fx = vec4(0.f, 0.f, f(x, t)); fx.xy = fx.zz; //     temporal function to GA
+    //   vec4 fx = vec4(f(x, t), 1.f);                     //     temporal function to RGB
+    //   vec4 fx = f(x, t);                                //     temporal function to RGBA
+    vec4 fx = animation(x, t);
     
     float pixel_y = gl_FragCoord.y;
     vec4 color;
     if (pixel_y > graphHeight)
     {
-        color = vec4(fx, 1.f);
+        color = revealAlphaWithChecker(fx, gl_FragCoord.xy);
     }
     else
     {
-        vec3 pixel_fx = graphHeight * (fx - c) / (d - c);
+        vec3 pixel_fx = graphHeight * (fx.xyz - c) / (d - c);
         color.xyz = clamp(pixel_fx - pixel_y, vec3(0.f), vec3(1.f));
         float y = c + pixel_y / graphHeight * (d - c);
         if (y < 0)
