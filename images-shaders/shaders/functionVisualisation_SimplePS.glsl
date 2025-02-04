@@ -247,11 +247,12 @@ void main()
     const int previewBandThickness = 48;
 
     // Set the domain interval [a, b] and codomain interval [c, d] to observe here
-    float a = 0.f;
-    float b = 1.f;
-    float c = 0.f;
-    float d = 1.f;
+    const float a = 0.f;
+    const float b = 1.f;
+    const float c = 0.f;
+    const float d = 1.f;
 
+    // Some computation to render the function at the current pixel and timepoint.
     float graphHeight = uResolution.y - previewBandThickness;
     float x = a + gl_FragCoord.x / uResolution.x * b - a;
     float t = uTime * speedFactor;

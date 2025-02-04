@@ -1,3 +1,4 @@
 # See chakram_units-wse.txt for more info
 
-exports/{units}/feu-ra/rope-manipulators/{rope-bender} | {stand} {se} {k=13}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}                  | {stand} {se} {k=0}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=1-15} | {se}

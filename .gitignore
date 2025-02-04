@@ -6,6 +6,7 @@
 
 __pycache__
 
+/images-animated
 /images-recolored
-/images-shaders/export
-/images-kra/export
+/images-shaders/exports
+/images-kra/exports
