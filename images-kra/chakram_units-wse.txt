@@ -13,12 +13,16 @@
 # If the path is relative, it is relative to the folder containing this file and the .kra file.
 # In the case the tag has no associated tag_value, it is replaced with the tag itself.
 
-exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}                       | {stand} {se} {k=0}
-exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{stand}-{k=1-15}      | {se}
-exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{throw}-{k=1-18}      | {se}
-exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{run}-{k=0-5}         | {se}
-exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}                  | {stand} {k=0}
-exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{stand}-{k=1-15}
-exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{throw}-{k=1-15}
-exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{run}-{k=0-5}
-exports/{projectiles}/{chakram}-{k=0-2}
+#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}                  | {stand} {se} {k=0}
+#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{stand}-{k=1-15} | {se}
+#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{throw}-{k=1-18} | {se}
+#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{run}-{k=0-5}    | {se}
+#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{die}-{k=1-5}    | {se}
+#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}             | {stand} {k=0}
+#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{stand}-{k=1-15}
+#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{run}-{k=0-5}
+#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{throw}-{k=1-15}
+exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{attack}-{k=1-9}
+#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{s}-{run}-{k=0-5}
+#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{n}-{run}-{k=0-5}
+#exports/{projectiles}/{chakram}-{k=0-2}
