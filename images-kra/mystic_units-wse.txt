@@ -1,6 +1,24 @@
 # See chakram_units-wse.txt for more info
 
-exports/{units}/feu-ra/mystics/{seer}                       | {stand} {se} {k=0}
-exports/{units}/feu-ra/mystics/{seer}-{stand}-{k=1}         | {se}
-exports/{units}/feu-ra/mystics/{seer}-{ne}                  | {stand} {k=0}
-exports/{units}/feu-ra/mystics/{seer}-{ne}-{stand}-{k=1-15}
+# #### #
+# seer #
+# #### #
+
+#exports/{units}/feu-ra/mystics/{seer}                       | {stand} {se} {k=0}
+#exports/{units}/feu-ra/mystics/{seer}-{stand}-{k=1}         | {se}
+#exports/{units}/feu-ra/mystics/{seer}-{ne}                  | {stand} {k=0}
+#exports/{units}/feu-ra/mystics/{seer}-{ne}-{stand}-{k=1-15}
+
+# #### #
+# guru #
+# #### #
+
+exports/{units}/feu-ra/mystics/{guru}                  | {stand} {se} {k=0}
+exports/{units}/feu-ra/mystics/{guru}-{stand}-{k=1-11} | {se}
+
+# ######### #
+# maharishi #
+# ######### #
+
+exports/{units}/feu-ra/mystics/{maharishi}                  | {stand} {se} {k=0}
+exports/{units}/feu-ra/mystics/{maharishi}-{stand}-{k=1-11} | {se}

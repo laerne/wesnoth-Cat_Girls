@@ -6,121 +6,162 @@ for input_color_folder in images-recolored/units/*; do
     output_color_folder="images-animated/units/${color_suffix}"
 
     python -m sprite_manager $@ animate --delay 200                                                                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-${color_suffix}.png"                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-1-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-2-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-3-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-4-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-5-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-6-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-7-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-8-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-9-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-10-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-11-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-12-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-13-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-14-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-15-${color_suffix}.png"           \
-        --output "${output_color_folder}/feu-ra/chakram-warriors/chakram-thrower-stand-${color_suffix}.gif"
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-${color_suffix}.png"                    \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-1-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-2-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-3-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-4-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-5-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-6-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-7-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-8-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-9-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-10-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-11-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-12-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-13-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-14-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-15-${color_suffix}.png"           \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-stand-${color_suffix}.gif"
+
+    python -m sprite_manager $@ animate --delay 200                                                                    \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-${color_suffix}.png"                    \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-attack-1-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-attack-2-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-attack-3-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-attack-4-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-attack-5-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-attack-6-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-attack-7-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-attack-8-${color_suffix}.png"           \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-attack-${color_suffix}.gif"
 
     python -m sprite_manager $@ animate --delay 100                                                                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-${color_suffix}.png"                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-1-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-2-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-3-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-4-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-5-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-6-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-7-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-8-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-9-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-10-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-11-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-12-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-13-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-14-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-15-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-16-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-17-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-18-${color_suffix}.png"           \
-        --output "${output_color_folder}/feu-ra/chakram-warriors/chakram-thrower-throw-${color_suffix}.gif"
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-${color_suffix}.png"                    \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-1-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-2-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-3-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-4-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-5-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-6-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-7-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-8-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-9-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-10-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-11-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-12-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-13-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-14-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-15-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-16-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-17-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-18-${color_suffix}.png"           \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-throw-${color_suffix}.gif"
 
     python -m sprite_manager $@ animate --delay 200                                                                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-0-${color_suffix}.png"              \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-1-${color_suffix}.png"              \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-2-${color_suffix}.png"              \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-3-${color_suffix}.png"              \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-4-${color_suffix}.png"              \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-run-5-${color_suffix}.png"              \
-        --output "${output_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-run-${color_suffix}.gif"
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-run-0-${color_suffix}.png"              \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-run-1-${color_suffix}.png"              \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-run-2-${color_suffix}.png"              \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-run-3-${color_suffix}.png"              \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-run-4-${color_suffix}.png"              \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-run-5-${color_suffix}.png"              \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-se-run-${color_suffix}.gif"
 
     python -m sprite_manager $@ animate                                                                                \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-${color_suffix}.png"       --delay 1200 \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-die-1-${color_suffix}.png" --delay 200  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-die-2-${color_suffix}.png" --delay 200  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-die-3-${color_suffix}.png" --delay 200  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-die-4-${color_suffix}.png" --delay 200  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-die-5-${color_suffix}.png" --delay 1200 \
-        --output "${output_color_folder}/feu-ra/chakram-warriors/chakram-thrower-se-die-${color_suffix}.gif"
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-${color_suffix}.png"       --delay 1200 \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-die-1-${color_suffix}.png" --delay 200  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-die-2-${color_suffix}.png" --delay 200  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-die-3-${color_suffix}.png" --delay 200  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-die-4-${color_suffix}.png" --delay 200  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-die-5-${color_suffix}.png" --delay 1200 \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-se-die-${color_suffix}.gif"
 
     python -m sprite_manager $@ animate --delay 200                                                                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-${color_suffix}.png"                 \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-1-${color_suffix}.png"         \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-2-${color_suffix}.png"         \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-3-${color_suffix}.png"         \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-4-${color_suffix}.png"         \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-5-${color_suffix}.png"         \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-6-${color_suffix}.png"         \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-7-${color_suffix}.png"         \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-8-${color_suffix}.png"         \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-9-${color_suffix}.png"         \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-10-${color_suffix}.png"        \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-11-${color_suffix}.png"        \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-12-${color_suffix}.png"        \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-13-${color_suffix}.png"        \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-14-${color_suffix}.png"        \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-15-${color_suffix}.png"        \
-        --output "${output_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-stand-${color_suffix}.gif"
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-${color_suffix}.png"                 \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-1-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-2-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-3-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-4-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-5-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-6-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-7-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-8-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-9-${color_suffix}.png"         \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-10-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-11-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-12-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-13-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-14-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-15-${color_suffix}.png"        \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-stand-${color_suffix}.gif"
 
     python -m sprite_manager $@ animate --delay 200                                                                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-run-0-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-run-1-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-run-2-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-run-3-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-run-4-${color_suffix}.png"           \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-run-5-${color_suffix}.png"           \
-        --output "${output_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-run-${color_suffix}.gif"
-
-    python -m sprite_manager $@ animate --delay 200                                                                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-${color_suffix}.png"                 \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-attack-1-${color_suffix}.png"        \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-attack-2-${color_suffix}.png"        \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-attack-3-${color_suffix}.png"        \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-attack-4-${color_suffix}.png"        \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-attack-5-${color_suffix}.png"        \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-attack-6-${color_suffix}.png"        \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-attack-7-${color_suffix}.png"        \
-        --output "${output_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-attack-${color_suffix}.gif"
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-${color_suffix}.png"                 \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-attack-1-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-attack-2-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-attack-3-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-attack-4-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-attack-5-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-attack-6-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-attack-7-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-attack-8-${color_suffix}.png"        \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-attack-9-${color_suffix}.png"        \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-attack-${color_suffix}.gif"
 
     python -m sprite_manager $@ animate                                                                                     \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-${color_suffix}.png"          --delay 75  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-1-${color_suffix}.png"  --delay 75  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-2-${color_suffix}.png"  --delay 75  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-3-${color_suffix}.png"  --delay 75  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-4-${color_suffix}.png"  --delay 75  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-5-${color_suffix}.png"  --delay 75  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-6-${color_suffix}.png"  --delay 75  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-7-${color_suffix}.png"  --delay 50  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-8-${color_suffix}.png"  --delay 50  \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-9-${color_suffix}.png"  --delay 100 \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-10-${color_suffix}.png" --delay 100 \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-11-${color_suffix}.png" --delay 100 \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-12-${color_suffix}.png" --delay 100 \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-13-${color_suffix}.png" --delay 100 \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-14-${color_suffix}.png" --delay 100 \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-15-${color_suffix}.png" --delay 100 \
-        --output "${output_color_folder}/feu-ra/chakram-warriors/chakram-thrower-ne-throw-${color_suffix}.gif"
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-${color_suffix}.png"          --delay 75  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-1-${color_suffix}.png"  --delay 75  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-2-${color_suffix}.png"  --delay 75  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-3-${color_suffix}.png"  --delay 75  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-4-${color_suffix}.png"  --delay 75  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-5-${color_suffix}.png"  --delay 75  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-6-${color_suffix}.png"  --delay 75  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-7-${color_suffix}.png"  --delay 50  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-8-${color_suffix}.png"  --delay 50  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-9-${color_suffix}.png"  --delay 100 \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-10-${color_suffix}.png" --delay 100 \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-11-${color_suffix}.png" --delay 100 \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-12-${color_suffix}.png" --delay 100 \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-13-${color_suffix}.png" --delay 100 \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-14-${color_suffix}.png" --delay 100 \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-15-${color_suffix}.png" --delay 100 \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-throw-${color_suffix}.gif"
+
+    python -m sprite_manager $@ animate --delay 200                                                                    \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-run-0-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-run-1-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-run-2-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-run-3-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-run-4-${color_suffix}.png"           \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-run-5-${color_suffix}.png"           \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-run-${color_suffix}.gif"
+
+    python -m sprite_manager $@ animate                                                                                   \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-${color_suffix}.png"       --delay 1200 \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-die-1-${color_suffix}.png" --delay 200  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-die-2-${color_suffix}.png" --delay 200  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-die-3-${color_suffix}.png" --delay 200  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-die-4-${color_suffix}.png" --delay 200  \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-die-5-${color_suffix}.png" --delay 1200 \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-ne-die-${color_suffix}.gif"
+        
+    python -m sprite_manager $@ animate --delay 200                                                                    \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-s-run-0-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-s-run-1-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-s-run-2-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-s-run-3-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-s-run-4-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-s-run-5-${color_suffix}.png"            \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-s-run-${color_suffix}.gif"
+
+    python -m sprite_manager $@ animate --delay 200                                                                    \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-n-run-0-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-n-run-1-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-n-run-2-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-n-run-3-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-n-run-4-${color_suffix}.png"            \
+        --frame "${input_color_folder}/feu-ra/chakram-wielders/chakram-fighter-n-run-5-${color_suffix}.png"            \
+        --output "${output_color_folder}/feu-ra/chakram-wielders/chakram-fighter-n-run-${color_suffix}.gif"
 
     python -m sprite_manager $@ animate --delay 200                                                                    \
         --frame "${input_color_folder}/feu-ra/mystics/seer-ne-${color_suffix}.png"                                     \
@@ -147,6 +188,37 @@ for input_color_folder in images-recolored/units/*; do
         --output "${output_color_folder}/feu-ra/mystics/seer-stand-${color_suffix}.gif"
 
     python -m sprite_manager $@ animate --delay 200                                                                    \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-${color_suffix}.png"                                        \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-stand-1-${color_suffix}.png"                                \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-stand-2-${color_suffix}.png"                                \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-stand-3-${color_suffix}.png"                                \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-stand-4-${color_suffix}.png"                                \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-stand-5-${color_suffix}.png"                                \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-stand-6-${color_suffix}.png"                                \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-stand-7-${color_suffix}.png"                                \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-stand-8-${color_suffix}.png"                                \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-stand-9-${color_suffix}.png"                                \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-stand-10-${color_suffix}.png"                               \
+        --frame "${input_color_folder}/feu-ra/mystics/guru-stand-11-${color_suffix}.png"                               \
+        --output "${output_color_folder}/feu-ra/mystics/guru-stand-${color_suffix}.gif"
+
+
+    python -m sprite_manager $@ animate --delay 200                                                                    \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-${color_suffix}.png"                                   \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-stand-1-${color_suffix}.png"                           \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-stand-2-${color_suffix}.png"                           \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-stand-3-${color_suffix}.png"                           \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-stand-4-${color_suffix}.png"                           \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-stand-5-${color_suffix}.png"                           \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-stand-6-${color_suffix}.png"                           \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-stand-7-${color_suffix}.png"                           \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-stand-8-${color_suffix}.png"                           \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-stand-9-${color_suffix}.png"                           \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-stand-10-${color_suffix}.png"                          \
+        --frame "${input_color_folder}/feu-ra/mystics/maharishi-stand-11-${color_suffix}.png"                          \
+        --output "${output_color_folder}/feu-ra/mystics/maharishi-stand-${color_suffix}.gif"
+
+    python -m sprite_manager $@ animate --delay 200                                                                    \
         --frame "${input_color_folder}/feu-ra/rope-manipulators/rope-bender-${color_suffix}.png"                       \
         --frame "${input_color_folder}/feu-ra/rope-manipulators/rope-bender-stand-1-${color_suffix}.png"               \
         --frame "${input_color_folder}/feu-ra/rope-manipulators/rope-bender-stand-2-${color_suffix}.png"               \
@@ -164,24 +236,6 @@ for input_color_folder in images-recolored/units/*; do
         --frame "${input_color_folder}/feu-ra/rope-manipulators/rope-bender-stand-14-${color_suffix}.png"              \
         --frame "${input_color_folder}/feu-ra/rope-manipulators/rope-bender-stand-15-${color_suffix}.png"              \
         --output "${output_color_folder}/feu-ra/rope-manipulators/rope-bender-stand-${color_suffix}.gif"
-
-    python -m sprite_manager $@ animate --delay 200                                                                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-s-run-0-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-s-run-1-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-s-run-2-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-s-run-3-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-s-run-4-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-s-run-5-${color_suffix}.png"            \
-        --output "${output_color_folder}/feu-ra/chakram-warriors/chakram-thrower-s-run-${color_suffix}.gif"
-
-    python -m sprite_manager $@ animate --delay 200                                                                    \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-n-run-0-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-n-run-1-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-n-run-2-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-n-run-3-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-n-run-4-${color_suffix}.png"            \
-        --frame "${input_color_folder}/feu-ra/chakram-warriors/chakram-thrower-n-run-5-${color_suffix}.png"            \
-        --output "${output_color_folder}/feu-ra/chakram-warriors/chakram-thrower-n-run-${color_suffix}.gif"
  
 done
 

@@ -11,18 +11,68 @@
 #
 # The final filename is the name left of "|", stripped of whitespaces and with its tags replaced by its current tag value.
 # If the path is relative, it is relative to the folder containing this file and the .kra file.
-# In the case the tag has no associated tag_value, it is replaced with the tag itself.
+# In the case the tag has no associated tag_value, it is replaced with the tag name itself.
 
-#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}                  | {stand} {se} {k=0}
-#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{stand}-{k=1-15} | {se}
-#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{throw}-{k=1-18} | {se}
-#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{run}-{k=0-5}    | {se}
-#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{die}-{k=1-5}    | {se}
-#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}             | {stand} {k=0}
-#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{stand}-{k=1-15}
-#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{run}-{k=0-5}
-#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{throw}-{k=1-15}
-exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{ne}-{attack}-{k=1-9}
-#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{s}-{run}-{k=0-5}
-#exports/{units}/feu-ra/chakram-warriors/{chakram-thrower}-{n}-{run}-{k=0-5}
-#exports/{projectiles}/{chakram}-{k=0-2}
+# ############### #
+# chakram-fighter #
+# ############### #
+
+# South-East
+
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}                  | {stand} {se} {k=0}
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{stand}-{k=1-15} | {se}
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{attack}-{k=1-8} | {se}
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{throw}-{k=1-18} | {se}
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{run}-{k=0-5}    | {se}
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{die}-{k=1-5}    | {se}
+
+# North-East
+
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{ne}                  | {stand} {k=0}
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{ne}-{stand}-{k=1-15}
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{ne}-{attack}-{k=1-9}
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{ne}-{throw}-{k=1-15}
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{ne}-{run}-{k=0-5}
+exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{ne}-{die}-{k=1-5}
+
+
+# South
+
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{s}-{run}-{k=0-5}
+
+# North
+
+#exports/{units}/feu-ra/chakram-wielders/{chakram-fighter}-{n}-{run}-{k=0-5}
+
+
+# ############### #
+# chakram-warrior #
+# ############### #
+
+#exports/{units}/feu-ra/chakram-wielders/{chakram-warrior} | {stand} {se} {k=0}
+
+# ############### #
+# chakram-thrower #
+# ############### #
+
+#exports/{units}/feu-ra/chakram-wielders/{chakram-thrower} | {stand} {se} {k=0}
+
+# ############### #
+# chakram-acrobat #
+# ############### #
+
+# ############## #
+# chakram-dancer #
+# ############## #
+
+#exports/{units}/feu-ra/chakram-wielders/{chakram-dancer} | {stand} {se} {k=0}
+
+# ################# #
+# chakram-songtress #
+# ################# #
+
+## ##### #
+## Other #
+## ##### #
+
+exports/{projectiles}/{chakram}-{k=0-2}
