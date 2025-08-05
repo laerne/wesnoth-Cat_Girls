@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 cd "$(git rev-parse --show-toplevel)"
 
-python -m sprite_manager $@ recolor -i :/images/units -o :/images-recolored/units --color-suffixes --color-folders     \
+python -m sprite_manager recolor -i :/images/units -o :/images-recolored/units                                         \
+    --color-suffixes --color-folders --recursive $@                                                                    \
     --from magenta,cyan                                                                                                \
     --to red,indianyellow                                                                                              \
     --to blue,indianyellow                                                                                             \
@@ -65,8 +66,8 @@ python -m sprite_manager $@ recolor -i :/images/units -o :/images-recolored/unit
     --to gold,gold                                                                                                     \
 
 
-python -m sprite_manager $@ recolor -i :/images/halo/mystic-sensed -o :/images-recolored/halo/mystic-sensed            \
-    --color-suffixes --color-folders                                                                                   \
+python -m sprite_manager recolor -i :/images/halo/mystic-sensed -o :/images-recolored/halo/mystic-sensed               \
+    --color-suffixes --color-folders --recursive $@                                                                    \
     --from magenta                                                                                                     \
     --to red                                                                                                           \
     --to blue                                                                                                          \

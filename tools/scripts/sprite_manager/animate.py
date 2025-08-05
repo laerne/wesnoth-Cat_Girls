@@ -4,14 +4,16 @@ import os
 
 from PIL import Image
 
-from .util import convert_path, newer_than
+from .util import path_to_splitpath, get_times
 
 def animate_file(sprites_with_times, output_path, update_only=False):
     [paths, mstimes] = zip(*sprites_with_times)
-    output_path = convert_path(output_path)
-    paths = [convert_path(path) for path in paths]
+    output_path = path_to_splitpath(output_path).abs()
+    paths = [path_to_splitpath(path).abs() for path in paths]
     
-    if update_only and newer_than(output_path, *paths):
+    output_time = get_times(output_path)
+    times = get_times(paths)
+    if update_only and all(output_time > time for time in times):
         print(f"Up-to-date: {output_path}.")
         return
 
