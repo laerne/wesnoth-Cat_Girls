@@ -4,10 +4,10 @@
 # seer #
 # #### #
 
-#exports/{units}/feu-ra/mystics/{seer}                       | {stand} {se} {k=0}
-#exports/{units}/feu-ra/mystics/{seer}-{stand}-{k=1}         | {se}
-#exports/{units}/feu-ra/mystics/{seer}-{ne}                  | {stand} {k=0}
-#exports/{units}/feu-ra/mystics/{seer}-{ne}-{stand}-{k=1-15}
+exports/{units}/feu-ra/mystics/{seer}                       | {stand} {se} {k=0}
+exports/{units}/feu-ra/mystics/{seer}-{stand}-{k=1}         | {se}
+exports/{units}/feu-ra/mystics/{seer}-{ne}                  | {stand} {k=0}
+exports/{units}/feu-ra/mystics/{seer}-{ne}-{stand}-{k=1-15}
 
 # #### #
 # guru #

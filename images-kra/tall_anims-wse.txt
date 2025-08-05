@@ -1,0 +1,3 @@
+# See chakram_units-wse.txt for more info
+
+exports/{units}/feu-ra/mystics/{seer}-{die}-{k=0-16} | {se}
