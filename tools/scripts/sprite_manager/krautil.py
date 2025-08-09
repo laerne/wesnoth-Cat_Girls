@@ -14,7 +14,7 @@ def convert_kra(input_file : str, output_file : str, keep_old_files_on_equality 
         print(f"Updating: {output_file}")
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     if keep_old_files_on_equality:
-        output_dir, output_filename = os.path.basename(output_file)
+        output_dir, output_filename = os.path.split(output_file)
         with tempfile.TemporaryDirectory(dir = output_dir) as tmp_output_dir_mngr:
             tmp_output_file = os.path.join(tmp_output_dir_mngr, output_filename)
             run_krita('--export', input_file, '--export-filename', tmp_output_file)
@@ -47,7 +47,6 @@ def run_kra(args):
         args.output,
         recursive=args.recursive,
         update_only=args.update_only or args.strong_update_only,
-        keep_old_files_on_equality=args.strong_update_only,
-    )
-    
+        keep_old_files_on_equality=args.strong_update_only)
+
 

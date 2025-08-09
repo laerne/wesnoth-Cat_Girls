@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 cd "$(git rev-parse --show-toplevel)"
 
+python -m sprite_manager kra -i :/images-kra/exports -o :/images --recursive
+
+
 python -m sprite_manager recolor -i :/images/units -o :/images-recolored/units                                         \
-    --color-suffixes --color-folders --recursive $@                                                                    \
+    --color-suffixes --color-folders --recursive                                                                       \
     --from magenta,cyan                                                                                                \
     --to red,indianyellow                                                                                              \
     --to blue,indianyellow                                                                                             \
@@ -67,7 +70,7 @@ python -m sprite_manager recolor -i :/images/units -o :/images-recolored/units  
 
 
 python -m sprite_manager recolor -i :/images/halo/mystic-sensed -o :/images-recolored/halo/mystic-sensed               \
-    --color-suffixes --color-folders --recursive $@                                                                    \
+    --color-suffixes --color-folders --recursive                                                                       \
     --from magenta                                                                                                     \
     --to red                                                                                                           \
     --to blue                                                                                                          \
@@ -85,3 +88,5 @@ python -m sprite_manager recolor -i :/images/halo/mystic-sensed -o :/images-reco
     --to brightorange                                                                                                  \
     --to gold                                                                                                          \
 
+
+python -m sprite_manager animate -i :/json-animations --recursive

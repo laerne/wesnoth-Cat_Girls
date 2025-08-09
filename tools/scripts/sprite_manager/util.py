@@ -20,7 +20,7 @@ def get_git_root():
 def get_relative_root():
     return os.getcwd()
 
-    
+
 def get_time(path):
     if isinstance(path, SplitPath):
         path = path.abs()
@@ -42,6 +42,8 @@ def get_times(paths):
 
 
 def image_equal(path_1, path_2):
+    if not os.path.isfile(path_1) or not os.path.isfile(path_2):
+        return False
     with Image.open(path_1) as image_1:
         with Image.open(path_2) as image_2:
             image_diff = ImageChops.difference(image_1, image_2)
@@ -80,6 +82,13 @@ class PathRoot(Enum):
             case PathRoot.LocalFolderRoot: return get_relative_root()
             case PathRoot.GitRoot:         return get_git_root()
 
+    def str(self):
+        match self:
+            case PathRoot.FileSystemRoot:  return ""
+            case PathRoot.LocalFolderRoot: return "."
+            case PathRoot.GitRoot:         return ":"
+
+
 
 @dataclass(slots=True, frozen=True)
 class SplitPath:
@@ -97,8 +106,17 @@ class SplitPath:
             case _: raise ValueError("Argument 'depth' must be any of 'root', 'front', 'mid' or 'back'")
         return os.path.join(*(component for component in components if component))
 
+    def str(self, depth = "back"):
+        match depth:
+            case "root":  components = [self.root.str()]
+            case "front": components = [self.root.str(), self.front]
+            case "mid":   components = [self.root.str(), self.front, self.mid]
+            case "back":  components = [self.root.str(), self.front, self.mid, self.back]
+            case _: raise ValueError("Argument 'depth' must be any of 'root', 'front', 'mid' or 'back'")
+        return os.path.join(*(component for component in components if component))
+
     def __str__(self):
-        return self.abs()
+        return self.str()
 
     def replaced_with(self, root = None, front = None, mid = None, back = None):
         if root  is None: root  = self.root
@@ -127,7 +145,7 @@ class SplitPath:
 
     def with_prepended_mid_folder(self, folder):
         return self.replaced_with(mid = os.path.join(folder, self.mid))
-    
+
     def with_appended_mid_folder(self, folder):
         return self.replaced_with(mid = os.path.join(self.mid, folder))
 
@@ -158,7 +176,7 @@ def path_to_splitpath(path : str, nonexistant_is_dir : bool = False):
         rel_path = path
 
     abs_path = os.path.join(root.path(), rel_path)
-    
+
     if os.path.isdir(abs_path):
         front_path, back_path = rel_path, ""
     elif os.path.isfile(abs_path):
@@ -174,8 +192,7 @@ def path_to_splitpath(path : str, nonexistant_is_dir : bool = False):
 def list_files_recursively(
         input_path : str,
         recursive: False,
-        allowed_extension = (".png", ".jpg", ".jpeg"),
-        ):
+        allowed_extension = (".png", ".jpg", ".jpeg")):
 
     split_input_path = path_to_splitpath(input_path)
 

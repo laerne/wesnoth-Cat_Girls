@@ -10,6 +10,7 @@ PalettableType = Color | list[Color] | tuple[Color]
 
 color_sep_re = re.compile(" *[,/+\\;:] *")
 
+
 def palettable_to_palette(palettable: Palette):
     match palettable:
         case Color():
@@ -65,7 +66,7 @@ def recolor_file(
             print()
         else:
             print(" [No pixels to update]")
-            
+
 
 def _color_to_colorname(color : Color):
     return str(color).lower().removeprefix("base ").replace(" ", "")
@@ -99,13 +100,13 @@ def recolor_folder(
         update_only = False,
         keep_old_files_on_equality = False,
         ):
-    
+
     assert isPalettable(input_color)
     if isPalettable(output_colors):
         output_colors = [output_colors]
     else:
         output_colors = list(output_colors)
-    
+
     if len(output_colors) > 1 and not separate_color_by_mid_subfolders and not add_color_suffixes:
         raise ValueError("You must enable either separate_color_by_mid_subfolders or add_color_suffix if you want to recolor to many colors")
 
@@ -145,6 +146,5 @@ def run_recolor(args):
         add_color_suffixes = args.color_suffixes,
         recursive = args.recursive,
         update_only=args.update_only or args.strong_update_only,
-        keep_old_files_on_equality=args.strong_update_only,
-    )
+        keep_old_files_on_equality=args.strong_update_only)
 
