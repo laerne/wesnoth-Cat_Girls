@@ -1,0 +1,35 @@
+{
+    "$wml_root_path" : ":/images/units/feu-ra/mystics",
+    "$gif_root_path" : ":/images-recolored/units/{color/}feu-ra/mystics",
+
+    "$animations_to_export" : ["ne-stand"],
+
+    "$default_frame" : { "$duration" : 200 },
+
+    "ne-stand" : {
+        "$gif_output_path" : ":/images-animated/units/{color/}feu-ra/mystics/seer{-$name}{-color}.gif",
+        "$wml_output_path" : ":/animations/units/feu-ra/mystics/seer{-$name}.wml",
+        "$frames" : [
+            { "$input_path" : "seer-ne{-color}.png" },
+            { "$input_path" : "seer-ne-stand-1{-color}.png" },
+            { "$input_path" : "seer-ne-stand-2{-color}.png" },
+            { "$input_path" : "seer-ne-stand-3{-color}.png" },
+            { "$input_path" : "seer-ne-stand-4{-color}.png" },
+            { "$input_path" : "seer-ne-stand-5{-color}.png" },
+            { "$input_path" : "seer-ne-stand-6{-color}.png" },
+            { "$input_path" : "seer-ne-stand-7{-color}.png" },
+            { "$input_path" : "seer-ne-stand-8{-color}.png" },
+            { "$input_path" : "seer-ne-stand-9{-color}.png" },
+            { "$input_path" : "seer-ne-stand-10{-color}.png" },
+            { "$input_path" : "seer-ne-stand-11{-color}.png" },
+            { "$input_path" : "seer-ne-stand-12{-color}.png" },
+            { "$input_path" : "seer-ne-stand-13{-color}.png" },
+            { "$input_path" : "seer-ne-stand-14{-color}.png" },
+            { "$input_path" : "seer-ne-stand-15{-color}.png" }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/color-pairs.json" }
+}

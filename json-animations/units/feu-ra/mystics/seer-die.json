@@ -1,0 +1,36 @@
+{
+    "$wml_root_path" : ":/images/units/feu-ra/mystics",
+    "$gif_root_path" : ":/images-recolored/units/{color/}feu-ra/mystics",
+
+    "$animations_to_export" : ["die"],
+
+    "$default_frame" : { "$duration" : 200 },
+
+    "die" : {
+        "$gif_output_path" : ":/images-animated/units/{color/}feu-ra/mystics/seer{-$name}{-color}.gif",
+        "$wml_output_path" : ":/animations/units/feu-ra/mystics/seer{-$name}.wml",
+        "$frames" : [
+            { "$input_path" : "seer-die-0{-color}.png", "$gif_delay" : 1800, "$wml_delay" : 0 },
+            { "$input_path" : "seer-die-1{-color}.png", "$delay" : 50 },
+            { "$input_path" : "seer-die-2{-color}.png", "$delay" : 50 },
+            { "$input_path" : "seer-die-3{-color}.png", "$delay" : 50 },
+            { "$input_path" : "seer-die-4{-color}.png", "$delay" : 50 },
+            { "$input_path" : "seer-die-5{-color}.png", "$delay" : 50 },
+            { "$input_path" : "seer-die-6{-color}.png" },
+            { "$input_path" : "seer-die-7{-color}.png" },
+            { "$input_path" : "seer-die-8{-color}.png" },
+            { "$input_path" : "seer-die-9{-color}.png" },
+            { "$input_path" : "seer-die-10{-color}.png" },
+            { "$input_path" : "seer-die-11{-color}.png" },
+            { "$input_path" : "seer-die-12{-color}.png" },
+            { "$input_path" : "seer-die-13{-color}.png" },
+            { "$input_path" : "seer-die-14{-color}.png" },
+            { "$input_path" : "seer-die-15{-color}.png" },
+            { "$input_path" : "seer-die-16{-color}.png", "$gif_delay" : 1800, "$wml_delay" : 0 }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/color-pairs.json" }
+}

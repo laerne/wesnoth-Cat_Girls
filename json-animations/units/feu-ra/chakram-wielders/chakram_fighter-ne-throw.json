@@ -1,0 +1,35 @@
+{
+    "$wml_root_path" : ":/images/units/feu-ra/chakram-wielders",
+    "$gif_root_path" : ":/images-recolored/units/{color/}feu-ra/chakram-wielders",
+
+    "$animations_to_export" : ["ne-throw"],
+
+    "$default_frame" : { "$duration" : 100 },
+
+    "ne-throw" : {
+        "$gif_output_path" : ":/images-animated/units/{color/}feu-ra/chakram-wielders/chakram-fighter{-$name}{-color}.gif",
+        "$wml_output_path" : ":/animations/units/feu-ra/chakram-wielders/chakram-fighter{-$name}.wml",
+        "$frames" : [
+            { "$input_path" : "chakram-fighter-ne{-color}.png" },
+            { "$input_path" : "chakram-fighter-ne-throw-1{-color}.png",  "$delay" : 75 },
+            { "$input_path" : "chakram-fighter-ne-throw-2{-color}.png",  "$delay" : 75 },
+            { "$input_path" : "chakram-fighter-ne-throw-3{-color}.png",  "$delay" : 75 },
+            { "$input_path" : "chakram-fighter-ne-throw-4{-color}.png",  "$delay" : 75 },
+            { "$input_path" : "chakram-fighter-ne-throw-5{-color}.png",  "$delay" : 75 },
+            { "$input_path" : "chakram-fighter-ne-throw-6{-color}.png",  "$delay" : 75 },
+            { "$input_path" : "chakram-fighter-ne-throw-7{-color}.png",  "$delay" : 50 },
+            { "$input_path" : "chakram-fighter-ne-throw-8{-color}.png",  "$delay" : 50 },
+            { "$input_path" : "chakram-fighter-ne-throw-9{-color}.png",  "$delay" : 100 },
+            { "$input_path" : "chakram-fighter-ne-throw-10{-color}.png", "$delay" : 100, "$is_time_origin" : true },
+            { "$input_path" : "chakram-fighter-ne-throw-11{-color}.png", "$delay" : 100 },
+            { "$input_path" : "chakram-fighter-ne-throw-12{-color}.png", "$delay" : 100 },
+            { "$input_path" : "chakram-fighter-ne-throw-13{-color}.png", "$delay" : 100 },
+            { "$input_path" : "chakram-fighter-ne-throw-14{-color}.png", "$delay" : 100 },
+            { "$input_path" : "chakram-fighter-ne-throw-15{-color}.png", "$delay" : 100 }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/color-pairs.json" }
+}

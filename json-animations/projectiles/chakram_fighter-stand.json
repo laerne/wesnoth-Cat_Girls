@@ -1,0 +1,35 @@
+{
+    "$wml_root_path" : ":/images/units/feu-ra/chakram-wielders",
+    "$gif_root_path" : ":/images-recolored/units/{color/}feu-ra/chakram-wielders",
+
+    "$animations_to_export" : ["stand"],
+
+    "$default_frame" : { "$duration" : 200 },
+
+    "stand" : {
+        "$gif_output_path" : ":/images-animated/units/{color/}feu-ra/chakram-wielders/chakram-fighter{-$name}{-color}.gif",
+        "$wml_output_path" : ":/animations/units/feu-ra/chakram-wielders/chakram-fighter{-$name}.wml",
+        "$frames" : [
+            { "$input_path" : "chakram-fighter{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-1{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-2{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-3{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-4{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-5{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-6{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-7{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-8{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-9{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-10{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-11{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-12{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-13{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-14{-color}.png" },
+            { "$input_path" : "chakram-fighter-stand-15{-color}.png" }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/color-pairs.json" }
+}

@@ -16,7 +16,6 @@ def get_git_root():
         return dn(dn(dn(dn(__file__))))
 
 
-@functools.cache
 def get_relative_root():
     return os.getcwd()
 
@@ -76,11 +75,16 @@ class PathRoot(Enum):
     LocalFolderRoot = auto()
     GitRoot = auto()
 
-    def path(self):
+    def path(self, cwd = None):
         match self:
-            case PathRoot.FileSystemRoot:  return ""
-            case PathRoot.LocalFolderRoot: return get_relative_root()
-            case PathRoot.GitRoot:         return get_git_root()
+            case PathRoot.FileSystemRoot:
+                return ""
+            case PathRoot.LocalFolderRoot:
+                if cwd is None:
+                    return get_relative_root()
+                return cwd
+            case PathRoot.GitRoot:
+                return get_git_root()
 
     def str(self):
         match self:
@@ -97,12 +101,12 @@ class SplitPath:
     mid   : str # Only nested directories
     back  : str # Filenames of regular files
 
-    def abs(self, depth = "back"):
+    def abs(self, depth = "back", cwd = None):
         match depth:
-            case "root":  components = [self.root.path()]
-            case "front": components = [self.root.path(), self.front]
-            case "mid":   components = [self.root.path(), self.front, self.mid]
-            case "back":  components = [self.root.path(), self.front, self.mid, self.back]
+            case "root":  components = [self.root.path(cwd)]
+            case "front": components = [self.root.path(cwd), self.front]
+            case "mid":   components = [self.root.path(cwd), self.front, self.mid]
+            case "back":  components = [self.root.path(cwd), self.front, self.mid, self.back]
             case _: raise ValueError("Argument 'depth' must be any of 'root', 'front', 'mid' or 'back'")
         return os.path.join(*(component for component in components if component))
 

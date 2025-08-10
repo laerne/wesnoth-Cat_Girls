@@ -1,0 +1,21 @@
+{
+    "$wml_root_path" : ":/images/units/feu-ra/mystics",
+    "$gif_root_path" : ":/images-recolored/units/{color/}feu-ra/mystics",
+
+    "$animations_to_export" : ["stand"],
+
+    "$default_frame" : { "$duration" : 1600 },
+
+    "stand" : {
+        "$gif_output_path" : ":/images-animated/units/{color/}feu-ra/mystics/seer{-$name}{-color}.gif",
+        "$wml_output_path" : ":/animations/units/feu-ra/mystics/seer{-$name}.wml",
+        "$frames" : [
+            { "$input_path" : "seer{-color}.png" },
+            { "$input_path" : "seer-stand-1{-color}.png" }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/color-pairs.json" }
+}

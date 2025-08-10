@@ -1,0 +1,25 @@
+{
+    "$wml_root_path" : ":/images/units/feu-ra/chakram-wielders",
+    "$gif_root_path" : ":/images-recolored/units/{color/}feu-ra/chakram-wielders",
+
+    "$animations_to_export" : ["ne-run"],
+
+    "$default_frame" : { "$duration" : 200 },
+
+    "ne-run" : {
+        "$gif_output_path" : ":/images-animated/units/{color/}feu-ra/chakram-wielders/chakram-fighter{-$name}{-color}.gif",
+        "$wml_output_path" : ":/animations/units/feu-ra/chakram-wielders/chakram-fighter{-$name}.wml",
+        "$frames" : [
+            { "$input_path" : "chakram-fighter-ne-run-0{-color}.png" },
+            { "$input_path" : "chakram-fighter-ne-run-1{-color}.png" },
+            { "$input_path" : "chakram-fighter-ne-run-2{-color}.png" },
+            { "$input_path" : "chakram-fighter-ne-run-3{-color}.png" },
+            { "$input_path" : "chakram-fighter-ne-run-4{-color}.png" },
+            { "$input_path" : "chakram-fighter-ne-run-5{-color}.png" }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/color-pairs.json" }
+}

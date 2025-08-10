@@ -1,0 +1,16 @@
+{
+    "$root_path" : ":/images/projectiles",
+    "$animations_to_export" : ["hovering"],
+    "$default_frame" : { "$duration" : 200, "$frame_prefix" : "missile" },
+
+    "hovering" : {
+        "$gif_output_path" : ":/images-animated/projectiles/chakram.gif",
+        "$wml_output_path" : ":/animations/projectiles/chakram.wml",
+        "$frames" : [
+            { "$input_path" : "chakram-0.png" },
+            { "$input_path" : "chakram-1.png" },
+            { "$input_path" : "chakram-0.png" },
+            { "$input_path" : "chakram-2.png" }
+        ]
+    }
+}

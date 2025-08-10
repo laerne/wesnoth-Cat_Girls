@@ -1,0 +1,38 @@
+{
+    "$wml_root_path" : ":/images/units/feu-ra/chakram-wielders",
+    "$gif_root_path" : ":/images-recolored/units/{color/}feu-ra/chakram-wielders",
+
+    "$animations_to_export" : ["throw"],
+
+    "$default_frame" : { "$duration" : 100 },
+
+    "throw" : {
+        "$gif_output_path" : ":/images-animated/units/{color/}feu-ra/chakram-wielders/chakram-fighter{-$name}{-color}.gif",
+        "$wml_output_path" : ":/animations/units/feu-ra/chakram-wielders/chakram-fighter{-$name}.wml",
+        "$frames" : [
+            { "$input_path" : "chakram-fighter{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-1{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-2{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-3{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-4{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-5{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-6{-color}.png", "$is_time_origin" : true },
+            { "$input_path" : "chakram-fighter-throw-7{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-8{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-9{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-10{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-11{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-12{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-13{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-14{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-15{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-16{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-17{-color}.png" },
+            { "$input_path" : "chakram-fighter-throw-18{-color}.png" }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/color-pairs.json" }
+}

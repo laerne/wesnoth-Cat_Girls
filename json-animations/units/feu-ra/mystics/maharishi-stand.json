@@ -1,0 +1,31 @@
+{
+    "$wml_root_path" : ":/images/units/feu-ra/mystics",
+    "$gif_root_path" : ":/images-recolored/units/{color/}feu-ra/mystics",
+
+    "$animations_to_export" : ["stand"],
+
+    "$default_frame" : { "$duration" : 200 },
+
+    "stand" : {
+        "$gif_output_path" : ":/images-animated/units/{color/}feu-ra/mystics/maharishi{-$name}{-color}.gif",
+        "$wml_output_path" : ":/animations/units/feu-ra/mystics/maharishi{-$name}.wml",
+        "$frames" : [
+            { "$input_path" : "maharishi{-color}.png" },
+            { "$input_path" : "maharishi-stand-1{-color}.png" },
+            { "$input_path" : "maharishi-stand-2{-color}.png" },
+            { "$input_path" : "maharishi-stand-3{-color}.png" },
+            { "$input_path" : "maharishi-stand-4{-color}.png" },
+            { "$input_path" : "maharishi-stand-5{-color}.png" },
+            { "$input_path" : "maharishi-stand-6{-color}.png" },
+            { "$input_path" : "maharishi-stand-7{-color}.png" },
+            { "$input_path" : "maharishi-stand-8{-color}.png" },
+            { "$input_path" : "maharishi-stand-9{-color}.png" },
+            { "$input_path" : "maharishi-stand-10{-color}.png" },
+            { "$input_path" : "maharishi-stand-11{-color}.png" }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/color-pairs.json" }
+}

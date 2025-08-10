@@ -80,6 +80,34 @@ class AnimationFileInfo:
     fallback_frame               : Optional[FrameInfo]
 
 
+def load_json_includes(json_object, animation_file_path):
+    match json_object:
+        case { "#include" : include_path, **key_values }:
+            abs_include_path = path_to_splitpath(
+                    include_path,
+                    nonexistant_is_dir = False).abs(
+                    cwd = animation_file_path.abs("mid"))
+            with open(abs_include_path, "rt") as stream:
+                raw_included_json = json.load(stream)
+                included_json = load_json_includes(raw_included_json, path_to_splitpath(abs_include_path, nonexistant_is_dir=False))
+                if isinstance(included_json, dict):
+                    overwritten_json = load_json_includes({ **key_values }, animation_file_path)
+                    return { **included_json, **overwritten_json }
+                else:
+                    return included_json
+        
+        case { **key_values }:
+            return {key : load_json_includes(value, animation_file_path) for key, value in key_values.items()}
+        
+        case [ *values ]:
+            return [load_json_includes(value, animation_file_path) for value in values]
+        
+        case _:
+            return json_object
+
+    raise ValueError(f"Invalid json object of type {type(json_object)}")
+
+
 def get_path(json_object, key, root_path : SplitPath, nonexistant_is_dir : bool = False):
     if key not in json_object:
         return None
@@ -334,6 +362,7 @@ def parse_animation_file(json_object, animation_file_path : SplitPath):
 def parse_main(json_object, animation_file_path : SplitPath):
     animation_cache = {}
     animation_infos = {}
+    json_object = load_json_includes(json_object, animation_file_path)
     animation_file_info = parse_animation_file(json_object, animation_file_path)
     for animation_name in (
               frozenset(animation_file_info.gif_animations_to_export)
@@ -357,6 +386,10 @@ def write_frame_wml(
         path_variables : dict[str, str],
         indentation_level = 0,
         indentation_sequence = "    "):
+    
+    if frame_info.wml_duration <= 0:
+        return
+
     unindented_prefix = indentation_sequence * indentation_level
     indented_prefix = indentation_sequence * (indentation_level + 1)
 
@@ -401,7 +434,8 @@ def write_animation_wml(
     def write_indented_line(content):
         stream.write(f"{indented_prefix}{content}\n")
 
-    write_indented_line(f"start_time={animation_info.start_time}")
+    if animation_info.start_time != 0:
+        write_indented_line(f"start_time={animation_info.start_time}")
     for frame_info in animation_info.frames:
         write_frame_wml(stream, frame_info, path_variables, indentation_level + 1, indentation_sequence)
 
@@ -504,7 +538,7 @@ def write_gif_animation_file(
             image    = Image.open(frame_input_path),
             duration = frame.gif_duration,
             offset   = add_offsets(frame.offset, frame.directional_offset))
-        for (frame_input_path, frame) in zip(frame_input_paths, animation_info.frames)]
+        for (frame_input_path, frame) in zip(frame_input_paths, animation_info.frames) if frame.gif_duration > 0]
     make_gif(gif_frame_infos, output_path.abs())
 
 

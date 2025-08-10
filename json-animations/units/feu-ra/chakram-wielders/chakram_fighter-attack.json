@@ -1,0 +1,28 @@
+{
+    "$wml_root_path" : ":/images/units/feu-ra/chakram-wielders",
+    "$gif_root_path" : ":/images-recolored/units/{color/}feu-ra/chakram-wielders",
+
+    "$animations_to_export" : ["attack"],
+
+    "$default_frame" : { "$duration" : 200 },
+
+    "attack" : {
+        "$gif_output_path" : ":/images-animated/units/{color/}feu-ra/chakram-wielders/chakram-fighter{-$name}{-color}.gif",
+        "$wml_output_path" : ":/animations/units/feu-ra/chakram-wielders/chakram-fighter{-$name}.wml",
+        "$frames" : [
+            { "$input_path" : "chakram-fighter{-color}.png" },
+            { "$input_path" : "chakram-fighter-attack-1{-color}.png" },
+            { "$input_path" : "chakram-fighter-attack-2{-color}.png", "$is_time_origin" : true },
+            { "$input_path" : "chakram-fighter-attack-3{-color}.png" },
+            { "$input_path" : "chakram-fighter-attack-4{-color}.png" },
+            { "$input_path" : "chakram-fighter-attack-5{-color}.png" },
+            { "$input_path" : "chakram-fighter-attack-6{-color}.png" },
+            { "$input_path" : "chakram-fighter-attack-7{-color}.png" },
+            { "$input_path" : "chakram-fighter-attack-8{-color}.png" }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/color-pairs.json" }
+}

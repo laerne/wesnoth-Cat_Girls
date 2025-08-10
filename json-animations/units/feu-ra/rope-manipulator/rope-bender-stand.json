@@ -1,0 +1,35 @@
+{
+    "$wml_root_path" : ":/images/units/feu-ra/rope-manipulators",
+    "$gif_root_path" : ":/images-recolored/units/{color/}feu-ra/rope-manipulators",
+
+    "$animations_to_export" : ["stand"],
+
+    "$default_frame" : { "$duration" : 200 },
+
+    "stand" : {
+        "$gif_output_path" : ":/images-animated/units/{color/}feu-ra/rope-manipulators/rope-bender{-$name}{-color}.gif",
+        "$wml_output_path" : ":/animations/units/feu-ra/rope-manipulators/rope-bender{-$name}.wml",
+        "$frames" : [
+            { "$input_path" : "rope-bender{-color}.png" },
+            { "$input_path" : "rope-bender-stand-1{-color}.png" },
+            { "$input_path" : "rope-bender-stand-2{-color}.png" },
+            { "$input_path" : "rope-bender-stand-3{-color}.png" },
+            { "$input_path" : "rope-bender-stand-4{-color}.png" },
+            { "$input_path" : "rope-bender-stand-5{-color}.png" },
+            { "$input_path" : "rope-bender-stand-6{-color}.png" },
+            { "$input_path" : "rope-bender-stand-7{-color}.png" },
+            { "$input_path" : "rope-bender-stand-8{-color}.png" },
+            { "$input_path" : "rope-bender-stand-9{-color}.png" },
+            { "$input_path" : "rope-bender-stand-10{-color}.png" },
+            { "$input_path" : "rope-bender-stand-11{-color}.png" },
+            { "$input_path" : "rope-bender-stand-12{-color}.png" },
+            { "$input_path" : "rope-bender-stand-13{-color}.png" },
+            { "$input_path" : "rope-bender-stand-14{-color}.png" },
+            { "$input_path" : "rope-bender-stand-15{-color}.png" }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/color-pairs.json" }
+}
