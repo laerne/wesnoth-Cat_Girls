@@ -1,0 +1,7 @@
+# See chakram_units-wse.txt for more info
+
+exports/attacks/feu_ra_{chakram}
+exports/attacks/feu_ra_{behold_the_truth}
+exports/attacks/feu_ra_{rope_binding}
+exports/attacks/feu_ra_{rope_mace}
+exports/attacks/feu_ra_{urumi}

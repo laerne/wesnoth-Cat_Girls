@@ -1,0 +1,25 @@
+{
+    "$wml_root_path" : ":/images/units/feu-ra/rope-manipulators",
+    "$gif_root_path" : ":/images-recolored/units/{color/}feu-ra/rope-manipulators",
+
+    "$animations_to_export" : ["stand"],
+
+    "$default_frame" : { "$duration" : 400 },
+
+    "stand" : {
+        "$gif_output_path" : ":/images-animated/units/{color/}feu-ra/rope-manipulators/hairdresser{-$name}{-color}.gif",
+        "$wml_output_path" : ":/animations/units/feu-ra/rope-manipulators/hairdresser{-$name}.wml",
+        "$frames" : [
+            { "$input_path" : "hairdresser{-color}.png" },
+            { "$input_path" : "hairdresser-stand-1{-color}.png" },
+            { "$input_path" : "hairdresser-stand-2{-color}.png" },
+            { "$input_path" : "hairdresser-stand-3{-color}.png" },
+            { "$input_path" : "hairdresser-stand-4{-color}.png" },
+            { "$input_path" : "hairdresser-stand-5{-color}.png" }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/color-pairs.json" }
+}
