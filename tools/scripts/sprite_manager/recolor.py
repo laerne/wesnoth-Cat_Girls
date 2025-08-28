@@ -3,7 +3,7 @@ import re
 import sys
 from PIL import Image
 from .teamcolor import *
-from .util import save_image, list_files_recursively, path_to_splitpath, get_time
+from .util import save_image, list_files_recursively, path_to_splitpath, get_time, isdir
 from typing import Iterable
 
 PalettableType = Color | list[Color] | tuple[Color]
@@ -111,7 +111,7 @@ def recolor_folder(
         raise ValueError("You must enable either separate_color_by_mid_subfolders or add_color_suffix if you want to recolor to many colors")
 
     split_input_back_paths = list_files_recursively(input_path, recursive)
-    split_output_path = path_to_splitpath(output_path, nonexistant_is_dir = os.path.isdir(input_path))
+    split_output_path = path_to_splitpath(output_path, nonexistant_is_dir = isdir(input_path))
 
     for output_color in output_colors:
         color_name = color_to_colorname(output_color)

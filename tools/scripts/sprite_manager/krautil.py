@@ -1,7 +1,7 @@
 import os
 import subprocess
 import tempfile
-from .util import list_files_recursively, path_to_splitpath, get_time, image_equal
+from .util import list_files_recursively, path_to_splitpath, get_time, image_equal, isdir
 
 def run_krita(*args : list[str]):
     completion = subprocess.run(['krita', *args])
@@ -30,7 +30,7 @@ def convert_kra_folder(
         update_only : bool = False,
         keep_old_files_on_equality = False):
     split_input_back_paths = list_files_recursively(input_path, recursive, allowed_extension=".kra")
-    split_output_path = path_to_splitpath(output_path, nonexistant_is_dir = os.path.isdir(input_path))
+    split_output_path = path_to_splitpath(output_path, nonexistant_is_dir = isdir(input_path))
     for split_input_back_path in split_input_back_paths:
         split_output_back_path = split_output_path                                             \
             .replaced_with(mid = split_input_back_path.mid, back = split_input_back_path.back) \

@@ -158,7 +158,7 @@ class SplitPath:
         return self.replaced_with(back = basename + ext)
 
 
-def path_to_splitpath(path : str, nonexistant_is_dir : bool = False):
+def path_to_splitpath(path : str | SplitPath, nonexistant_is_dir : bool = False):
     if isinstance(path, SplitPath):
         return path
 
@@ -187,6 +187,12 @@ def path_to_splitpath(path : str, nonexistant_is_dir : bool = False):
         front_path, back_path = os.path.split(rel_path)
 
     return SplitPath(root = root, front = front_path, mid = "", back = back_path)
+
+
+def isdir(path : str | SplitPath, nonexistant_is_dir : bool = False):
+    if isinstance(path, str):
+        path = path_to_splitpath(path, nonexistant_is_dir)
+    return os.path.isdir(path.abs())
 
 
 def list_files_recursively(
