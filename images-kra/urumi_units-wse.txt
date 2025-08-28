@@ -1,3 +1,4 @@
 # See chakram_units-wse.txt for more info
 
-exports/{units}/feu-ra/urumi-warriors/{urumi-fighter} | {stand} {se} {k=13}
+exports/{units}/feu-ra/urumi-warriors/{urumi-warrior}       | {stand} {se}
+exports/{units}/feu-ra/urumi-warriors/{heavy-urumi-warrior} | {stand} {se}

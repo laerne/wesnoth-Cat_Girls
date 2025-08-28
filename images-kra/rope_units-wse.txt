@@ -1,7 +1,11 @@
 # See chakram_units-wse.txt for more info
 
-exports/{units}/feu-ra/rope-manipulators/{rope-bender}                                                | {stand} {se} {k=0} {rope=1} {lh=1} {rh=1} {lf=d}
-exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-left{lh=1-5}-right{rh=1-5}-tail{k=1-15}|         {se}       {rope=1}               {lf=d}
+#exports/{units}/feu-ra/rope-manipulators/{rope-bender}                                                | {stand} {se} {k=0} {rope=1} {lh=1} {rh=1} {lf=d}
+#exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-left{lh=1-5}-right{rh=1-5}-tail{k=1-15}|         {se}       {rope=1}               {lf=d}
+
+exports/{units}/feu-ra/rope-manipulators/{rope-sculptor} | {stand} {se} {k=0}
 
 exports/{units}/feu-ra/rope-manipulators/{hairdresser}                  | {stand} {se} {k=0}
 exports/{units}/feu-ra/rope-manipulators/{hairdresser}-{stand}-{k=1-5}  | {se}
+
+exports/{units}/feu-ra/rope-manipulators/{shackled} | {stand} {se} {k=0}

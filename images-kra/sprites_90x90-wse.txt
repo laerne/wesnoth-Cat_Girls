@@ -1,0 +1,3 @@
+# See chakram_units-wse.txt for more info
+
+exports/{units}/feu-ra/rope-manipulators/{cat-o-nine-tails} | {stand} {se} {k=0}
