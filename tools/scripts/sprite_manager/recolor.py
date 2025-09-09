@@ -8,7 +8,7 @@ from typing import Iterable
 
 PalettableType = Color | list[Color] | tuple[Color]
 
-color_sep_re = re.compile(" *[,/+\\;:] *")
+color_sep_re = re.compile(" *[,/;:] *")
 
 
 def palettable_to_palette(palettable: Palette):
@@ -76,10 +76,18 @@ def color_to_colorname(color : Palettable):
     match color:
         case Color():
             return _color_to_colorname(color)
+        case ShiftedColor(basecolor, shift):
+            basecolorname = color_to_colorname(color.basecolor)
+            if shift == 0:
+                return basecolorname
+            elif shift < 0:
+                return f"{basecolorname}{shift}"
+            else:
+                return f"{basecolorname}+{shift}"
         case CoColors():
-            return "+".join(_color_to_colorname(subcolor) for subcolor in color.subcolors)
+            return ",".join(color_to_colorname(subcolor) for subcolor in color.subcolors)
         case _:
-            raise TypeError("color argument must be either a Color or a CoColors")
+            raise TypeError(f"color argument must be either a Color, a ShiftedColor, or a CoColors, not {type(color)}")
 
 
 def color_from_colorname(colorname : str):
@@ -87,6 +95,21 @@ def color_from_colorname(colorname : str):
         return next(color for color in Color if color_to_colorname(color) == colorname)
     except StopIteration:
         raise ValueError(f"{repr(colorname)} is not a valid color name.")
+
+
+def color_from_colorstring(colorstring : str):
+    colorstr, sep, shiftstr = colorstring.partition('+')
+    if not sep:
+        colorstr, sep, shiftstr = colorstring.partition('-')
+
+    color = color_from_colorname(colorstr)
+    if not sep:
+        return color
+    else:
+        shift = int(shiftstr)
+        if sep == '-':
+            shift = -shift
+        return ShiftedColor(color, shift)
 
 
 def recolor_folder(
@@ -133,9 +156,9 @@ def run_recolor(args):
     co_input_color = None
     co_output_colors = None
     if getattr(args, "from"):
-        co_input_color = CoColors([color_from_colorname(color_string) for color_string in color_sep_re.split(getattr(args, "from"))])
+        co_input_color = CoColors([color_from_colorstring(color_string) for color_string in color_sep_re.split(getattr(args, "from"))])
     if args.to:
-        co_output_colors = [CoColors([color_from_colorname(color_string) for color_string in color_sep_re.split(color_tuple_string)]) for color_tuple_string in args.to]
+        co_output_colors = [CoColors([color_from_colorstring(color_string) for color_string in color_sep_re.split(color_tuple_string)]) for color_tuple_string in args.to]
 
     recolor_folder(
         args.input,

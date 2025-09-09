@@ -471,15 +471,41 @@ class GifFrameInfo:
     offset             : tuple[int, int]
 
 
-def translate_image(image : Image, offset):
-    match offset:
-        case (0, 0):
-            return
-        case (x, y):
-            raise NotImplementedError("Cannot align gif frames of different size and offset yet.")
-        case value:
-            raise ValueError("Offset must be a tuple of two integers not {type(value)}")
+def total_size_and_topleft_offset(sizes, offsets):
+    total_left_offset = 0
+    total_top_offset = 0
+    total_right_offset = 0
+    total_bottom_offset = 0
+    for ((w, h), (x, y)) in zip(sizes, offsets):
+        left, top = x - w // 2, y - h // 2
+        total_left_offset = min(total_left_offset, left)
+        total_top_offset  = min(total_top_offset,  top)
+        total_right_offset  = max(total_right_offset,  left + w)
+        total_bottom_offset = max(total_bottom_offset, top + h)
+    total_width = total_right_offset - total_left_offset
+    total_height = total_bottom_offset - total_top_offset
+    return ((total_width, total_height), (total_left_offset, total_top_offset))
 
+
+def remap_image(image : Image, size, offset):
+    if offset == (0, 0) and image.size == size:
+        return image # Or image.copy()
+    
+    new_image = Image.new("RGBA", size, (0,0,0,0))
+    new_image.paste(image, offset)
+
+    return new_image
+    
+
+def remap_image(image : Image, size, topleft_offset):
+    if topleft_offset == (0, 0) and image.size == size:
+        return image # Or image.copy()
+    
+    new_image = Image.new("RGBA", size, (0,0,0,0))
+    new_image.paste(image, topleft_offset)
+
+    return new_image
+    
 
 def make_gif(gif_frames : list[GifFrameInfo], output_path : str):
     if not gif_frames:
@@ -489,15 +515,14 @@ def make_gif(gif_frames : list[GifFrameInfo], output_path : str):
     durations = [gif_frame.duration for gif_frame in gif_frames]
     offsets   = [gif_frame.offset   for gif_frame in gif_frames]
 
-    size = images[0].size
-    for (image, offset) in zip(images, offsets):
-        if image.size != size:
-            raise NotImplementedError("Cannot align gif frames of different size and offset yet.")
-        translate_image(image, offset)
+    sizes = [image.size for image in images]
+    (save_size, (save_left_offset, save_top_offset)) = total_size_and_topleft_offset(sizes, offsets)
+    topleft_offsets = [(x - w // 2 - save_left_offset, y - h // 2 - save_top_offset) for ((w, h), (x, y)) in zip(sizes, offsets)]
+    images_to_save = [remap_image(image, save_size, topleft_offset) for (image, topleft_offset) in zip(images, topleft_offsets)]
 
-    images[0].save(output_path,
+    images_to_save[0].save(output_path,
                    save_all=True,
-                   append_images=images[1:],
+                   append_images=images_to_save[1:],
                    duration=durations,
                    disposal=2,       # restore background color
                    loop=0,           # loop forever

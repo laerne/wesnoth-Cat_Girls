@@ -60,17 +60,36 @@ Color.feu_ra_colors = [
 ]
 
 @dataclass
-class CoColors:
-    subcolors : list[Color] = field(default_factory=list)
+class ShiftedColor:
+    basecolor : Color
+    shift     : int
 
-Palettable = Color | CoColors
+
+@dataclass
+class CoColors:
+    subcolors : list[Color | ShiftedColor] = field(default_factory=list)
+
+Palettable = Color | ShiftedColor | CoColors
 
 def isPalettable(palettable : Any):
-    return isinstance(palettable, Color) or isinstance(palettable, CoColors)
+    return isinstance(palettable, Color) or isinstance(palettable, ShiftedColor) or isinstance(palettable, CoColors)
 
 @dataclass
 class Palette:
     rgb_shades : list[(int, int, int)] = field(default_factory=list)
+
+
+def shift_palette(palette : Palette, shift : int):
+    old_shades = palette.rgb_shades
+    if shift == 0:
+        return Palette(old_shades[:])
+    elif shift < 0:
+        clamp = lambda k: max(k, 0)
+    else:
+        clamp = lambda k: min(k, len(old_shades) - 1)
+    new_shades = [old_shades[clamp(index + shift)] for index in range(len(old_shades))]
+    return Palette(new_shades)
+
 
 def join_palettes(*palettes : list[Palette]):
     return Palette(list(itertools.chain.from_iterable(palette.rgb_shades for palette_generator in palettes for palette in palette_generator)))
@@ -91,7 +110,9 @@ def get_palette(color : Color | CoColors):
     match color:
         case Color():
             return _color_to_palette_map[color]
+        case ShiftedColor(basecolor, shift):
+            return shift_palette(get_palette(basecolor), shift)
         case CoColors():
-            return join_palettes(_color_to_palette_map[subcolor] for subcolor in color.subcolors)
+            return join_palettes(get_palette(subcolor) for subcolor in color.subcolors)
         case _:
-            raise TypeError("color argument must be either a Color or a CoColors")
+            raise TypeError(f"color argument must be either a Color, a ShiftedColor, or a CoColors, not {type(color)}")

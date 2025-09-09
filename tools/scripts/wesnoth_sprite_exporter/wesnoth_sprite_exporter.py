@@ -2,6 +2,7 @@
 
 import os
 import os.path
+import re
 import sys
 
 from .dsl import *
@@ -18,10 +19,24 @@ EXTENSION_ID = 'pykrita_wesnoth_sprite_exporter'
 MENU_ENTRY = 'Wesnoth Sprite Exporter'
 
 
-# def iterateAllLayers(rootLayer):
-#     if isinstance(rootLayer, Document):
-#         rootLayer = rootLayer.rootNode()
-#     yield from rootLayer.findChildNodes("", True, True)
+def isNone(value):
+    if isinstance(value, (list, tuple)):
+        return any(elem is None for elem in value)
+    else:
+        return value is None
+
+
+def parseRectValue(rectStr):
+    m = re.fullmatch(r" *(?P<width>[0-9]+) *x *(?P<height>[0-9]+) *\+ *(?P<x>[0-9]+) *\+ *(?P<y>[0-9]+) *", rectStr)
+    if m:
+        x = int(m.group("x"))
+        y = int(m.group("y"))
+        w = int(m.group("width"))
+        h = int(m.group("height"))
+        return x, y, w, h
+    else:
+        print(f"Invalid rectangle argument {repr(rectStr)}. It must have the form '<width>x<height>+<x>+<y>' for integers <width>, <height>, <x>, <y>.")
+        return None, None, None, None
 
 # A Skipped Layer DOES NOT MEAN its children will be skipped.
 class LayerIterable:
@@ -127,6 +142,12 @@ class WesnothSpriteExporter(Extension):
         clonedDocument = self.currentDocument.clone()
         clonedDocumentIterable = LayerIterable(clonedDocument, skipRoot=True, skipPattern="No Name")
         clonedDocumentIterable.iterWithCallback(setHideLayerAccordinglyToTags)
+
+        if "+CROP" in tags:
+            x, y, w, h = parseRectValue(tags["+CROP"])
+            if not isNone((x, y, w, h)):
+                clonedDocument.crop(x, y, w, h)
+                
 
         path += ".kra"
         print(f"Exporting to filename {repr(path)}...")
