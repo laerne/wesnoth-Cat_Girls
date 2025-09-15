@@ -1,0 +1,25 @@
+# See chakram_units-wse.txt for more info
+
+# ####### #
+# Kavalar #
+# ####### #
+
+exports/{units}/feu-ra/dandpatta-leaders/{kavalar} | {stand} {se} {+CROP=72x72+0+36}
+
+# ###### #
+# Nayaka #
+# ###### #
+
+exports/{units}/feu-ra/dandpatta-leaders/{nayaka} | {stand} {se} {+CROP=72x72+0+36}
+
+# ######## #
+# Senapati #
+# ######## #
+
+exports/{units}/feu-ra/dandpatta-leaders/{senapati} | {stand} {se} {+CROP=72x72+0+36}
+
+# ############ #
+# Mahasenapati #
+# ############ #
+
+exports/{units}/feu-ra/dandpatta-leaders/{mahasenapati} | {stand} {se}

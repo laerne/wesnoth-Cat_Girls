@@ -1,0 +1,19 @@
+# See chakram_units-wse.txt for more info
+
+# ########### #
+# Camel Rider #
+# ########### #
+
+exports/{units}/feu-ra/camel-riders/{camel-rider} | {stand} {se} {k=0}
+
+# ########### #
+# Camel Rider #
+# ########### #
+
+exports/{units}/feu-ra/camel-riders/{cameleer}    | {stand} {se} {k=0}
+
+# ########### #
+# Camel Rider #
+# ########### #
+
+exports/{units}/feu-ra/camel-riders/{heavy-cameleer} | {stand} {se} {k=0}

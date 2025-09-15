@@ -22,3 +22,9 @@ exports/{units}/feu-ra/mystics/{guru}-{stand}-{k=1-11} | {se}
 
 exports/{units}/feu-ra/mystics/{maharishi}                  | {stand} {se} {k=0}
 exports/{units}/feu-ra/mystics/{maharishi}-{stand}-{k=1-11} | {se}
+
+# ######### #
+# Nyctalope #
+# ######### #
+
+exports/{units}/feu-ra/mystics/{nyctalope} | {stand} {se} {k=0}

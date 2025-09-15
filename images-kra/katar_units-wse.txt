@@ -1,0 +1,19 @@
+# See chakram_units-wse.txt for more info
+
+# ######### #
+# Black cat #
+# ######### #
+
+exports/{units}/feu-ra/katar-fighters/{black-cat}  | {stand} {se}
+
+# ####### #
+# Ghataka #
+# ####### #
+
+exports/{units}/feu-ra/katar-fighters/{ghataka}    | {stand} {se}
+
+# ######### #
+# Wispblade #
+# ######### #
+
+exports/{units}/feu-ra/katar-fighters/{wispblade}  | {stand} {se}

@@ -1,11 +1,41 @@
 # See chakram_units-wse.txt for more info
 
-#exports/{units}/feu-ra/rope-manipulators/{rope-bender}                                                | {stand} {se} {k=0} {rope=1} {lh=1} {rh=1} {lf=d}
-#exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-left{lh=1-5}-right{rh=1-5}-tail{k=1-15}|         {se}       {rope=1}               {lf=d}
+# ########### #
+# Rope bender #
+# ########### #
 
-exports/{units}/feu-ra/rope-manipulators/{rope-sculptor} | {stand} {se} {k=0}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}|{stand} {k=0}    {se} {lh=2} {rh=1} {lf=down} {rope=0}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=1}  | {se} {lh=3} {rh=2} {lf=mid}  {rope=1}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=2}  | {se} {lh=2} {rh=1} {lf=up}   {rope=2}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=3}  | {se} {lh=4} {rh=3} {lf=mid}  {rope=3}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=4}  | {se} {lh=2} {rh=1} {lf=down} {rope=4}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=5}  | {se} {lh=3} {rh=2} {lf=mid}  {rope=5}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=6}  | {se} {lh=4} {rh=3} {lf=up}   {rope=6}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=7}  | {se} {lh=5} {rh=4} {lf=mid}  {rope=7}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=8}  | {se} {lh=4} {rh=3} {lf=down} {rope=8}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=9}  | {se} {lh=3} {rh=2} {lf=mid}  {rope=9}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=10} | {se} {lh=2} {rh=1} {lf=up}   {rope=10}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=11} | {se} {lh=4} {rh=2} {lf=mid}  {rope=11}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=12} | {se} {lh=3} {rh=2} {lf=down} {rope=12}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=13} | {se} {lh=2} {rh=1} {lf=mid}  {rope=13}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=14} | {se} {lh=1} {rh=1} {lf=up}   {rope=14}
+exports/{units}/feu-ra/rope-manipulators/{rope-bender}-{stand}-{k=15} | {se} {lh=2} {rh=1} {lf=mid}  {rope=15}
 
-exports/{units}/feu-ra/rope-manipulators/{hairdresser}                  | {stand} {se} {k=0}
-exports/{units}/feu-ra/rope-manipulators/{hairdresser}-{stand}-{k=1-5}  | {se}
+# ############# #
+# Rope sculptor #
+# ############# #
 
-exports/{units}/feu-ra/rope-manipulators/{shackled} | {stand} {se} {k=0}
+exports/{units}/feu-ra/rope-manipulators/{rope-sculptor} | {stand} {se} {k=0} {+CROP=72x72+0+36}
+
+# ########### #
+# Hairdresser #
+# ########### #
+
+exports/{units}/feu-ra/rope-manipulators/{hairdresser}                  | {stand} {se} {k=0} {+CROP=72x72+0+36}
+exports/{units}/feu-ra/rope-manipulators/{hairdresser}-{stand}-{k=1-5}  | {se}               {+CROP=72x72+0+36}
+
+# ######## #
+# Shackled #
+# ######## #
+
+exports/{units}/feu-ra/rope-manipulators/{shackled} | {stand} {se} {k=0} {+CROP=72x72+0+36}

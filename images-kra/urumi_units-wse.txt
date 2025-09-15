@@ -1,4 +1,19 @@
 # See chakram_units-wse.txt for more info
 
-exports/{units}/feu-ra/urumi-warriors/{urumi-warrior}       | {stand} {se}
-exports/{units}/feu-ra/urumi-warriors/{heavy-urumi-warrior} | {stand} {se}
+# ############### #
+# Urumi combatant #
+# ############### #
+
+exports/{units}/feu-ra/urumi-warriors/{urumi-combatant}     | {stand} {se} {k=0} {+CROP=90x72+0+18}
+
+# ############# #
+# Urumi warrior #
+# ############# #
+
+exports/{units}/feu-ra/urumi-warriors/{urumi-warrior}       | {stand} {se} {k=0} {+CROP=72x72+18+18}
+
+# ################### #
+# Heavy urumi warrior #
+# ################### #
+
+exports/{units}/feu-ra/urumi-warriors/{heavy-urumi-warrior} | {stand} {se} {k=0} {+CROP=90x72+18+18}

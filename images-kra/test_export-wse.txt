@@ -1,0 +1,9 @@
+# ############## #
+# Cropping tests #
+# ############## #
+
+export-{test}/{red}   | {+CROP=4x4+4+0}
+export-{test}/{green} | {+CROP=4x4+0+4}
+export-{test}/{blue}  | {+CROP=4x4+4+4}
+export-{test}/all     | {red} {green} {blue}
+
