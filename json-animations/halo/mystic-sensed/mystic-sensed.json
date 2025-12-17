@@ -1,0 +1,55 @@
+{
+    "$wml_root_path" : ":/images/halo/mystic-sensed",
+    "$gif_root_path" : ":/images-recolored/halo/mystic-sensed/{color}",
+
+    "$animations_to_export" : ["halo"],
+
+    "$default_frame" : { "$duration" : 50 },
+
+    "halo" : {
+        "$gif_output_path" : ":/images-animated/halo/mystic-sensed{/color}/mystic-sensed{-color}.gif",
+        "$wml_output_path" : ":/animations//halo/mystic-sensed/mystic-sensed.wml",
+        "$frames" : [
+            { "$input_path" : "mystic-sensed-1{-color}.png" },
+            { "$input_path" : "mystic-sensed-2{-color}.png" },
+            { "$input_path" : "mystic-sensed-3{-color}.png" },
+            { "$input_path" : "mystic-sensed-4{-color}.png" },
+            { "$input_path" : "mystic-sensed-5{-color}.png" },
+            { "$input_path" : "mystic-sensed-6{-color}.png" },
+            { "$input_path" : "mystic-sensed-7{-color}.png" },
+            { "$input_path" : "mystic-sensed-8{-color}.png" },
+            { "$input_path" : "mystic-sensed-9{-color}.png" },
+            { "$input_path" : "mystic-sensed-10{-color}.png" },
+            { "$input_path" : "mystic-sensed-11{-color}.png" },
+            { "$input_path" : "mystic-sensed-12{-color}.png" },
+            { "$input_path" : "mystic-sensed-13{-color}.png" },
+            { "$input_path" : "mystic-sensed-14{-color}.png" },
+            { "$input_path" : "mystic-sensed-15{-color}.png" },
+            { "$input_path" : "mystic-sensed-16{-color}.png" },
+            { "$input_path" : "mystic-sensed-17{-color}.png" },
+            { "$input_path" : "mystic-sensed-18{-color}.png" },
+            { "$input_path" : "mystic-sensed-19{-color}.png" },
+            { "$input_path" : "mystic-sensed-20{-color}.png" },
+            { "$input_path" : "mystic-sensed-21{-color}.png" },
+            { "$input_path" : "mystic-sensed-22{-color}.png" },
+            { "$input_path" : "mystic-sensed-23{-color}.png" },
+            { "$input_path" : "mystic-sensed-24{-color}.png" },
+            { "$input_path" : "mystic-sensed-25{-color}.png" },
+            { "$input_path" : "mystic-sensed-26{-color}.png" },
+            { "$input_path" : "mystic-sensed-27{-color}.png" },
+            { "$input_path" : "mystic-sensed-28{-color}.png" },
+            { "$input_path" : "mystic-sensed-29{-color}.png" },
+            { "$input_path" : "mystic-sensed-30{-color}.png" },
+            { "$input_path" : "mystic-sensed-31{-color}.png" },
+            { "$input_path" : "mystic-sensed-32{-color}.png" },
+            { "$input_path" : "mystic-sensed-33{-color}.png" },
+            { "$input_path" : "mystic-sensed-34{-color}.png" },
+            { "$input_path" : "mystic-sensed-35{-color}.png" },
+            { "$input_path" : "mystic-sensed-36{-color}.png" }
+        ]
+    },
+
+    "$path_variables" : { "color" : "" },
+
+    "$gif_path_variable_variations" : { "#include" : ":/json-includes/colors.json" }
+}
