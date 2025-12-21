@@ -22,4 +22,4 @@ exports/{units}/feu-ra/dandpatta-leaders/{senapati} | {stand} {se} {+CROP=72x72+
 # Mahasenapati #
 # ############ #
 
-exports/{units}/feu-ra/dandpatta-leaders/{mahasenapati} | {stand} {se}
+exports/{units}/feu-ra/dandpatta-leaders/{mahasenapati} | {stand} {se} {+RESIZE=72x144+0+0}

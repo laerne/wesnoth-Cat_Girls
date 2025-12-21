@@ -4,16 +4,16 @@
 # Camel Rider #
 # ########### #
 
-exports/{units}/feu-ra/camel-riders/{camel-rider} | {stand} {se} {k=0}
+exports/{units}/feu-ra/camel-riders/{camel-rider} | {stand} {se} {k=0} {+RESIZE=72x144+0+0}
 
 # ########### #
 # Camel Rider #
 # ########### #
 
-exports/{units}/feu-ra/camel-riders/{cameleer}    | {stand} {se} {k=0}
+exports/{units}/feu-ra/camel-riders/{cameleer} | {stand} {se} {k=0} {+RESIZE=72x144+0+0}
 
 # ########### #
 # Camel Rider #
 # ########### #
 
-exports/{units}/feu-ra/camel-riders/{heavy-cameleer} | {stand} {se} {k=0}
+exports/{units}/feu-ra/camel-riders/{heavy-cameleer} | {stand} {se} {k=0} {+RESIZE=72x144+0+0}

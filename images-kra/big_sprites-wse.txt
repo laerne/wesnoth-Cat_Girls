@@ -5,7 +5,7 @@
 # #### #
 
 exports/{units}/feu-ra/mystics/{seer}-{die}-{k=1-5}  | {se} {+CROP=72x72+72+72}
-exports/{units}/feu-ra/mystics/{seer}-{die}-{k=6-16} | {se} {+CROP=72x144+72+0}
+exports/{units}/feu-ra/mystics/{seer}-{die}-{k=6-16} | {se} {+CROP=72x216+72+0}
 
 # ################ #
 # Cat-o-nine tails #
