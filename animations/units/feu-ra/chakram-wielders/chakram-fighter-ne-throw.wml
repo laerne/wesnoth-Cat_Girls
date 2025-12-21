@@ -1,0 +1,65 @@
+start_time=-750
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne.png"
+    duration=100
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-1.png"
+    duration=75
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-2.png"
+    duration=75
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-3.png"
+    duration=75
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-4.png"
+    duration=75
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-5.png"
+    duration=75
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-6.png"
+    duration=75
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-7.png"
+    duration=50
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-8.png"
+    duration=50
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-9.png"
+    duration=100
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-10.png"
+    duration=100
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-11.png"
+    duration=100
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-12.png"
+    duration=100
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-13.png"
+    duration=100
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-14.png"
+    duration=100
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-throw-15.png"
+    duration=100
+[/frame]

@@ -1,0 +1,24 @@
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-die-1.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-die-2.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-die-3.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-die-4.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-die-5.png"
+    duration=200
+[/frame]

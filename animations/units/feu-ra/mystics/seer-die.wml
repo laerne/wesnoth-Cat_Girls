@@ -1,0 +1,60 @@
+[frame]
+    image="units/feu-ra/mystics/seer-die-1.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-2.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-3.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-4.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-5.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-6.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-7.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-8.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-9.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-10.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-11.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-12.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-13.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-14.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-die-15.png"
+    duration=200
+[/frame]

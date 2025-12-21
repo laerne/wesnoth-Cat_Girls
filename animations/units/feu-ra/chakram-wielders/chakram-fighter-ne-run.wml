@@ -1,0 +1,24 @@
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-run-0.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-run-1.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-run-2.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-run-3.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-run-4.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/chakram-wielders/chakram-fighter-ne-run-5.png"
+    duration=200
+[/frame]

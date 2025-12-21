@@ -1,0 +1,24 @@
+[frame]
+    image="units/feu-ra/rope-manipulators/hairdresser.png"
+    duration=400
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/hairdresser-stand-1.png"
+    duration=400
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/hairdresser-stand-2.png"
+    duration=400
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/hairdresser-stand-3.png"
+    duration=400
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/hairdresser-stand-4.png"
+    duration=400
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/hairdresser-stand-5.png"
+    duration=400
+[/frame]

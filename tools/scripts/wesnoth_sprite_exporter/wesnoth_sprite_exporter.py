@@ -1,5 +1,6 @@
 # BBD's Krita Script Starter Feb 2018
 
+import math
 import os
 import os.path
 import re
@@ -24,6 +25,17 @@ def isNone(value):
         return any(elem is None for elem in value)
     else:
         return value is None
+
+
+def parseSizeValue(sizeStr):
+    m = re.fullmatch(r" *(?P<width>[0-9]+) *x *(?P<height>[0-9]+) *", sizeStr)
+    if m:
+        w = int(m.group("width"))
+        h = int(m.group("height"))
+        return w, h
+    else:
+        print(f"Invalid size argument {repr(sizeStr)}. It must have the form '<width>x<height>' for integers <width> and <height>.")
+        return None, None
 
 
 def parseRectValue(rectStr):
@@ -147,7 +159,25 @@ class WesnothSpriteExporter(Extension):
             x, y, w, h = parseRectValue(tags["+CROP"])
             if not isNone((x, y, w, h)):
                 clonedDocument.crop(x, y, w, h)
-                
+        
+        if "+RESIZE" in tags:
+            x, y, w, h = parseRectValue(tags["+RESIZE"])
+            if not isNone((x, y, w, h)):
+                clonedDocument.resizeImage(x, y, w, h)
+        
+        if "+SMOOTHSCALE" in tags:
+            w, h = parseSizeValue(tags["+SMOOTHSCALE"])
+            if not isNone((w, h)):
+                xRes = clonedDocument.xRes()
+                yRes = clonedDocument.yRes()
+                clonedDocument.scaleImage(w, h, xRes, yRes, "Kanczos3")
+
+        if "+PIXELSCALE" in tags:
+            w, h = parseSizeValue(tags["+PIXELSCALE"])
+            if not isNone((w, h)):
+                xRes = clonedDocument.xRes()
+                yRes = clonedDocument.yRes()
+                clonedDocument.scaleImage(w, h, xRes, yRes, "Box")
 
         path += ".kra"
         print(f"Exporting to filename {repr(path)}...")

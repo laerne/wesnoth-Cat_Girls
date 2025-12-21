@@ -8,7 +8,7 @@
 
     "halo" : {
         "$gif_output_path" : ":/images-animated/halo/mystic-sensed{/color}/mystic-sensed{-color}.gif",
-        "$wml_output_path" : ":/animations//halo/mystic-sensed/mystic-sensed.wml",
+        "$wml_output_path" : ":/animations/halo/mystic-sensed/mystic-sensed.wml",
         "$frames" : [
             { "$input_path" : "mystic-sensed-1{-color}.png" },
             { "$input_path" : "mystic-sensed-2{-color}.png" },

@@ -16,17 +16,17 @@
             { "$input_path" : "seer-die-3{-color}.png", "duration" : 50 },
             { "$input_path" : "seer-die-4{-color}.png", "duration" : 50 },
             { "$input_path" : "seer-die-5{-color}.png", "duration" : 50 },
-            { "$input_path" : "seer-die-6{-color}.png", "$offset" : [0, -36] },
-            { "$input_path" : "seer-die-7{-color}.png", "$offset" : [0, -36] },
-            { "$input_path" : "seer-die-8{-color}.png", "$offset" : [0, -36] },
-            { "$input_path" : "seer-die-9{-color}.png", "$offset" : [0, -36] },
-            { "$input_path" : "seer-die-10{-color}.png", "$offset" : [0, -36] },
-            { "$input_path" : "seer-die-11{-color}.png", "$offset" : [0, -36] },
-            { "$input_path" : "seer-die-12{-color}.png", "$offset" : [0, -36] },
-            { "$input_path" : "seer-die-13{-color}.png", "$offset" : [0, -36] },
-            { "$input_path" : "seer-die-14{-color}.png", "$offset" : [0, -36] },
-            { "$input_path" : "seer-die-15{-color}.png", "$offset" : [0, -36] },
-            { "$input_path" : "seer-die-16{-color}.png", "$offset" : [0, -36], "$gif_duration" : 1800, "$wml_duration" : 0 }
+            { "$input_path" : "seer-die-6{-color}.png" },
+            { "$input_path" : "seer-die-7{-color}.png" },
+            { "$input_path" : "seer-die-8{-color}.png" },
+            { "$input_path" : "seer-die-9{-color}.png" },
+            { "$input_path" : "seer-die-10{-color}.png" },
+            { "$input_path" : "seer-die-11{-color}.png" },
+            { "$input_path" : "seer-die-12{-color}.png" },
+            { "$input_path" : "seer-die-13{-color}.png" },
+            { "$input_path" : "seer-die-14{-color}.png" },
+            { "$input_path" : "seer-die-15{-color}.png" },
+            { "$input_path" : "seer-die-16{-color}.png", "$gif_duration" : 1800, "$wml_duration" : 0 }
         ]
     },
 

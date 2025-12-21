@@ -35,16 +35,13 @@ class FrameInfo:
     directional_offset : tuple[int, int]
     opacity            : float
     other_wml_info     : dict[str, str]
+    other_wml_lines    : list[str]
+
 
     def replaced_with(self, **kwargs):
         assert frozenset(kwargs) <= frozenset(self.__slots__)
         data = { key : getattr(self, key) for key in self.__slots__ }
         data.update(kwargs)
-        return FrameInfo(**data)
-
-    def add_other_wml_info(self, **kwargs):
-        data = { key : getattr(self, key) for key in self.__slots__ }
-        data.setdefault("other_wml_info", {}).update(kwargs)
         return FrameInfo(**data)
 
     def frame_label(self):
@@ -213,10 +210,13 @@ def parse_frame(
     if opacity is None and fallback_frame is not None: opacity = fallback_frame.opacity
     if opacity is None: opacity = 1.0
 
-    other_wml_info = json_object.get("$other_wml_info")
-    if other_wml_info is None and fallback_frame is not None: other_wml_info = fallback_frame.other_wml_info
-    if other_wml_info is None: other_wml_info = {}
-    other_wml_info.update(json_object.get("$added_wml_info", {}))
+    other_wml_info = {}
+    if fallback_frame is not None: other_wml_info.update(fallback_frame.other_wml_info)
+    other_wml_info.update(json_object.get("$other_wml_info", {}))
+
+    other_wml_lines = json_object.get("$other_wml_lines", [])
+    if fallback_frame is not None: other_wml_lines += fallback_frame.other_wml_lines
+
     return FrameInfo(
         gif_input_path     = gif_input_path,
         wml_input_path     = wml_input_path,
@@ -227,7 +227,8 @@ def parse_frame(
         offset             = offset,
         directional_offset = directional_offset,
         opacity            = opacity,
-        other_wml_info     = other_wml_info)
+        other_wml_info     = other_wml_info,
+        other_wml_lines    = other_wml_lines)
 
 
 def parse_animation(
@@ -415,8 +416,10 @@ def write_frame_wml(
     write_indented_value("directional_x", frame_info.directional_offset[0], default_value = 0)
     write_indented_value("directional_y", frame_info.directional_offset[1], default_value = 0)
     write_indented_value("opacity",       frame_info.opacity,               default_value = 1.0)
-    for key, value in frame_info.other_wml_info.items():
-        write_indented_line(f"{key}={value}")
+    for key, value in sorted(frame_info.other_wml_info.items()):
+        write_indented_value(key, value)
+    for line in frame_info.other_wml_lines:
+        write_indented_line(line)
     write_unindented_line(f"[/{frame_info.frame_label()}]")
 
 
@@ -431,13 +434,11 @@ def write_animation_wml(
 
     def write_unindented_line(content):
         stream.write(f"{unindented_prefix}{content}\n")
-    def write_indented_line(content):
-        stream.write(f"{indented_prefix}{content}\n")
 
     if animation_info.start_time != 0:
-        write_indented_line(f"start_time={animation_info.start_time}")
+        write_unindented_line(f"start_time={animation_info.start_time}")
     for frame_info in animation_info.frames:
-        write_frame_wml(stream, frame_info, path_variables, indentation_level + 1, indentation_sequence)
+        write_frame_wml(stream, frame_info, path_variables, indentation_level, indentation_sequence)
 
 
 def write_wml_animation_file(

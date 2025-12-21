@@ -1,0 +1,8 @@
+[frame]
+    image="units/feu-ra/mystics/seer.png"
+    duration=1600
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/seer-stand-1.png"
+    duration=1600
+[/frame]

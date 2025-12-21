@@ -1,0 +1,64 @@
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-1.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-2.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-3.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-4.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-5.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-6.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-7.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-8.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-9.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-10.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-11.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-12.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-13.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-14.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/rope-manipulators/rope-bender-stand-15.png"
+    duration=200
+[/frame]

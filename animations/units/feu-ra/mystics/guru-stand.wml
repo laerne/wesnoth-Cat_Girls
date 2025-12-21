@@ -1,0 +1,48 @@
+[frame]
+    image="units/feu-ra/mystics/guru.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/guru-stand-1.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/guru-stand-2.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/guru-stand-3.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/guru-stand-4.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/guru-stand-5.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/guru-stand-6.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/guru-stand-7.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/guru-stand-8.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/guru-stand-9.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/guru-stand-10.png"
+    duration=200
+[/frame]
+[frame]
+    image="units/feu-ra/mystics/guru-stand-11.png"
+    duration=200
+[/frame]

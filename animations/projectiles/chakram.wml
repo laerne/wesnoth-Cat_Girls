@@ -1,0 +1,16 @@
+[missile_frame]
+    image="projectiles/chakram-0.png"
+    duration=200
+[/missile_frame]
+[missile_frame]
+    image="projectiles/chakram-1.png"
+    duration=200
+[/missile_frame]
+[missile_frame]
+    image="projectiles/chakram-0.png"
+    duration=200
+[/missile_frame]
+[missile_frame]
+    image="projectiles/chakram-2.png"
+    duration=200
+[/missile_frame]
