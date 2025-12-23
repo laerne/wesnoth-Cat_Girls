@@ -1,22 +1,22 @@
 [frame]
     image="units/feu-ra/mystics/seer-die-1.png"
-    duration=200
+    duration=50
 [/frame]
 [frame]
     image="units/feu-ra/mystics/seer-die-2.png"
-    duration=200
+    duration=50
 [/frame]
 [frame]
     image="units/feu-ra/mystics/seer-die-3.png"
-    duration=200
+    duration=50
 [/frame]
 [frame]
     image="units/feu-ra/mystics/seer-die-4.png"
-    duration=200
+    duration=50
 [/frame]
 [frame]
     image="units/feu-ra/mystics/seer-die-5.png"
-    duration=200
+    duration=50
 [/frame]
 [frame]
     image="units/feu-ra/mystics/seer-die-6.png"
