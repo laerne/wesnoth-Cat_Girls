@@ -4,7 +4,7 @@
 # Elephant archer #
 # ############### #
 
-exports/{units}/feu-ra/elephant-riders/{elephant-archer}     | {stand} {se} {+RESIZE=72x90+18+27}
+exports/{units}/feu-ra/elephant-riders/{elephant-archer} | {stand} {se} {+RESIZE=72x90+18+27}
 
 # ################### #
 # Elephant arbalister #
@@ -16,10 +16,16 @@ exports/{units}/feu-ra/elephant-riders/{elephant-arbalister} | {stand} {se} {+RE
 # Mobile tower #
 # ############ #
 
-exports/{units}/feu-ra/elephant-riders/{mobile-tower}        | {stand} {se} {+RESIZE=72x144+18+0}
+exports/{units}/feu-ra/elephant-riders/{mobile-tower} | {stand} {se} {+RESIZE=72x126+18+9}
+
+# ###################### #
+# Fortified Mobile tower #
+# ###################### #
+
+exports/{units}/feu-ra/elephant-riders/{fortified-mobile-tower} | {stand} {se} {+RESIZE=72x144+18+0}
 
 # ################ #
 # Mobile artillery #
 # ################ #
 
-exports/{units}/feu-ra/elephant-riders/{mobile-artillery}    | {stand} {se} {+CROP=108x108+0+18}
+exports/{units}/feu-ra/elephant-riders/{mobile-artillery} | {stand} {se} {+CROP=108x108+0+18}
