@@ -320,7 +320,7 @@ def parse_animation_file(json_object, animation_file_path : SplitPath):
                 result.append(elem)
         return result
 
-    animations_to_export = json_object.get("$animations_to_export")
+    animations_to_export = json_object.get("$animations_to_export", [])
     gif_animations_to_export = merge_unique(json_object.get("$gif_animations_to_export", []), animations_to_export)
     wml_animations_to_export = merge_unique(json_object.get("$wml_animations_to_export", []), animations_to_export)
 
