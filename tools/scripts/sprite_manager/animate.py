@@ -243,11 +243,11 @@ def parse_animation(
     name = json_object.get("$name", name_key)
 
     default_gif_output_path = get_path(json_object, "$output_path",     gif_root_path, nonexistant_is_dir = False) or gif_root_path
-    gif_output_path         = get_path(json_object, "$gif_output_path", gif_root_path, nonexistant_is_dir = False) or output_path
+    gif_output_path         = get_path(json_object, "$gif_output_path", gif_root_path, nonexistant_is_dir = False) or default_gif_output_path
     gif_output_path         = gif_output_path.with_back_extension(".gif")
 
     default_wml_output_path = get_path(json_object, "$output_path",     wml_root_path, nonexistant_is_dir = False) or wml_root_path
-    wml_output_path         = get_path(json_object, "$wml_output_path", wml_root_path, nonexistant_is_dir = False) or output_path
+    wml_output_path         = get_path(json_object, "$wml_output_path", wml_root_path, nonexistant_is_dir = False) or default_wml_output_path
     wml_output_path         = wml_output_path.with_back_extension(".wml")
 
     if "$default_frame" in json_object:
@@ -275,10 +275,10 @@ def parse_animation(
                         wml_root_path)
                 animation_cache[sub_animation_name] = sub_animation
 
-            if sub_animation.get("$is_time_origin", False):
-                frames.extend(sub_animation["$frames"])
+            if frame_data.get("$is_time_origin", False):
+                frames.extend(sub_animation.frames)
             else:
-                frames.extend(frame.replaced_with(is_time_origin = False) for frame in sub_animation["$frames"])
+                frames.extend(frame.replaced_with(is_time_origin = False) for frame in sub_animation.frames)
         else:
             frames.append(parse_frame(
                 frame_data,
@@ -415,9 +415,16 @@ def write_frame_wml(
     write_indented_value("y",             frame_info.offset[1],             default_value = 0)
     write_indented_value("directional_x", frame_info.directional_offset[0], default_value = 0)
     write_indented_value("directional_y", frame_info.directional_offset[1], default_value = 0)
-    write_indented_value("opacity",       frame_info.opacity,               default_value = 1.0)
+    write_indented_value("alpha",         frame_info.opacity,               default_value = 1.0)
     for key, value in sorted(frame_info.other_wml_info.items()):
-        write_indented_value(key, value)
+        if value is None:
+            pass
+        elif isinstance(value, str):
+            write_indented_value(key, repr(value))
+        elif isinstance(value, bool):
+            write_indented_value(key, "yes" if value else "no")
+        else:
+            write_indented_value(key, value)
     for line in frame_info.other_wml_lines:
         write_indented_line(line)
     write_unindented_line(f"[/{frame_info.frame_label()}]")
